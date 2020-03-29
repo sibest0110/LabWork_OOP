@@ -6,42 +6,36 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
-    public class Helicopter : VehiclesBase, IFuelCosts
+    /// <summary>
+    /// Вертолёт
+    /// </summary>
+    public class Helicopter : VehiclesBase
     {
-        private double _distance;
         /// <summary>
-        /// Расстояние, которое необходимо преодолеть
+        /// Вертолёт
         /// </summary>
-        public double Distance
-        {
-            get => _distance;
-            set
-            {
-                _distance = (value >= 0) ? value :
-                    throw new NegativeValueExeption("Расстояние");
-            }
-        }
-
-
-
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="weight">Масса автомобиля в кг.</param>
-        public Helicopter(double weight)
+        /// <param name="name">Название вертолёта</param>
+        /// <param name="weight">Масса вертолёта в кг</param>
+        public Helicopter(string name, double weight)
         {
             Weight = weight;
             Type = VehiclesTypes.Helicopter;
+            Name = name;
         }
-        public Helicopter() => Type = VehiclesTypes.Helicopter;
-
+        //public Helicopter() => Type = VehiclesTypes.Helicopter;
+        // СПЕЦИАЛЬНО ДЛЯ ДЕМОНСТРАЦИИ ТЕСТА
+        public Helicopter() { }
 
         /// <summary>
         /// Определение расхода топлива
         /// </summary>
+        /// <param name="distance">расстояние</param>
         /// <returns></returns>
-        public double FuelCost() => Distance * (Weight / 15000);
-
+        public override double FuelCost(double distance)
+        {
+            Distance = distance;
+            return Distance * (Weight / 15000);
+        }
 
         /// <summary>
         /// Издать звуки вертолёта

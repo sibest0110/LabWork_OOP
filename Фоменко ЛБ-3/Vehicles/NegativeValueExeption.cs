@@ -9,7 +9,7 @@ namespace Vehicles
     /// <summary>
     /// Дистанция не может быть отрицательной
     /// </summary>
-    internal class NegativeValueExeption : Exception
+    public class NegativeValueExeption : Exception
     {
         private string _argumentForMessage;
 
@@ -22,6 +22,6 @@ namespace Vehicles
             _argumentForMessage = argument;
         }
         public override string Message => 
-            $"{_argumentForMessage} не может быть отрицательным";
+            $"{_argumentForMessage} не может быть отрицательным числом";
     }
 }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
+    /// <summary>
+    /// Интерфейс для получения расхода топлива транспортного средства
+    /// </summary>
     public interface IFuelCosts
     {
         /// <summary>
@@ -17,6 +20,6 @@ namespace Vehicles
         /// Расход топлива
         /// </summary>
         /// <returns></returns>
-        double FuelCost();
+        double FuelCost(double distance);
     }
 }

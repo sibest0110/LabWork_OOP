@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
-    public abstract class VehiclesBase
+    /// <summary>
+    /// Транспортное средство
+    /// </summary>
+    public abstract class VehiclesBase : IFuelCosts
     {
+        public string Name { get; protected set; }
+
         /// <summary>
         /// Тип транспортного средства
         /// </summary>
-        public VehiclesTypes Type { get; protected set; } 
+        public VehiclesTypes Type { get; protected set; }
             = VehiclesTypes.Undefined;
+
+        private double _distance;
+        /// <summary>
+        /// Расстояние, которое необходимо преодолеть
+        /// </summary>
+        public double Distance
+        {
+            get => _distance;
+            set => _distance = (value >= 0) ? value :
+                throw new NegativeValueExeption("Расстояние");
+        }
 
         private double _weight;
         /// <summary>
@@ -25,8 +41,20 @@ namespace Vehicles
                 throw new NegativeValueExeption("Масса транспортного средства");
         }
 
+
         /// <summary>
-        /// Посигналить
+        /// Метод рассчёта затрачиваемого топлива
+        /// </summary>
+        /// <param name="distance">Расстояния, на которое рассчитывается расход</param>
+        /// <returns></returns>
+        public abstract double FuelCost(double distance);
+
+        /// <summary>
+        /// Посигналить. 
+        /// Данный метод приведён в качестве иллюстрации того,
+        /// что при обращении к объекту как к интерфейсу, 
+        /// мы не увидим других, в том числе публичных, методов, 
+        /// не приведённых в интерфейсе (инкапсуляция)
         /// </summary>
         public abstract void Beep();
     }

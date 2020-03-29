@@ -6,31 +6,21 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
-    public class HybridCar: VehiclesBase, IFuelCosts
+    /// <summary>
+    /// Гибридный автомобиль
+    /// </summary>
+    public class HybridCar: VehiclesBase
     {
-        private double _distance;
         /// <summary>
-        /// Расстояние, которое необходимо преодолеть
+        /// Гибридный автомобиль
         /// </summary>
-        public double Distance
-        {
-            get => _distance;
-            set
-            {
-                _distance = (value >= 0) ? value :
-                    throw new NegativeValueExeption("Расстояние");
-            }
-        }
-
-
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="weight">Масса автомобиля в кг.</param>
-        public HybridCar(double weight)
+        /// <param name="name">Название автомобиля</param>
+        /// <param name="weight">Масса автомобиля в кг</param>
+        public HybridCar(string name, double weight)
         {
             Weight = weight;
             Type = VehiclesTypes.HybridCar;
+            Name = name;
         }
         public HybridCar() => Type = VehiclesTypes.HybridCar;
 
@@ -38,8 +28,13 @@ namespace Vehicles
         /// <summary>
         /// Определение расхода топлива
         /// </summary>
+        /// <param name="distance">расстояние</param>
         /// <returns></returns>
-        public double FuelCost() => Distance * (Weight / 30000);
+        public override double FuelCost(double distance)
+        {
+            Distance = distance;
+            return Distance * (Weight / 30000);
+        }
 
 
 
