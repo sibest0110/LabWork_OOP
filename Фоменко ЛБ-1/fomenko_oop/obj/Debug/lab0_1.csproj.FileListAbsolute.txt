@@ -1,0 +1,112 @@
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\PersonLib.dll
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\PersonLib.pdb
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\lab0_1.exe.config
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\lab0_1.exe
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\lab0_1.pdb
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.exe
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\bin\Debug\lab0_1.exe.config
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\bin\Debug\lab0_1.exe
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\bin\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\bin\Debug\PersonLib.dll
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\bin\Debug\PersonLib.pdb
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.exe
+C:\Users\fomenko\Desktop\fomenko_oop\fomenko_oop\obj\Debug\lab0_1.pdb
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+\\fs.lab221.ru\ForStudents\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\obj\Debug\lab0_1.exe
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\obj\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\lab0_1.exe.config
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\lab0_1.exe
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\PersonLib.dll
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\PersonLib.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+F:\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb

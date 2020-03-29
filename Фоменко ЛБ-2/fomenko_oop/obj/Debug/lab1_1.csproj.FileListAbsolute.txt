@@ -1,0 +1,7 @@
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\fomenko_oop.exe.config
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\fomenko_oop.exe
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\bin\Debug\fomenko_oop.pdb
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab1_1.csprojAssemblyReference.cache
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\lab1_1.csproj.CoreCompileInputs.cache
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\fomenko_oop.exe
+C:\Users\fomenko\source\repos\fomenko_oop\fomenko_oop\obj\Debug\fomenko_oop.pdb

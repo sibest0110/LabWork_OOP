@@ -1,0 +1,14 @@
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\ExternalFilesLib\bin\Debug\ExternalFilesLib.dll
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\ExternalFilesLib\bin\Debug\ExternalFilesLib.pdb
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\ExternalFilesLib\obj\Debug\ExternalFilesLib.dll
+C:\Users\fomenko\Desktop\Фоменко ЛБ-1 (VS 2019)\ExternalFilesLib\obj\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\ExternalFilesLib\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\ExternalFilesLib\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\__ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.pdb

@@ -1,0 +1,11 @@
+C:\Users\fomenko\source\repos\fomenko_oop\PersonLib\bin\Release\PersonLib.dll
+C:\Users\fomenko\source\repos\fomenko_oop\PersonLib\bin\Release\PersonLib.pdb
+C:\Users\fomenko\source\repos\fomenko_oop\PersonLib\obj\Release\PersonLib.csproj.CoreCompileInputs.cache
+C:\Users\fomenko\source\repos\fomenko_oop\PersonLib\obj\Release\PersonLib.dll
+C:\Users\fomenko\source\repos\fomenko_oop\PersonLib\obj\Release\PersonLib.pdb
+C:\Users\fomenko\Desktop\fomenko_oop\PersonLib\bin\Release\PersonLib.dll
+C:\Users\fomenko\Desktop\fomenko_oop\PersonLib\bin\Release\PersonLib.pdb
+C:\Users\fomenko\Desktop\fomenko_oop\PersonLib\obj\Release\PersonLib.csprojAssemblyReference.cache
+C:\Users\fomenko\Desktop\fomenko_oop\PersonLib\obj\Release\PersonLib.csproj.CoreCompileInputs.cache
+C:\Users\fomenko\Desktop\fomenko_oop\PersonLib\obj\Release\PersonLib.dll
+C:\Users\fomenko\Desktop\fomenko_oop\PersonLib\obj\Release\PersonLib.pdb
