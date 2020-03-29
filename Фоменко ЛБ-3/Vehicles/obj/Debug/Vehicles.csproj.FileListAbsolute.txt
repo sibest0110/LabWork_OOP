@@ -1,0 +1,5 @@
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\Vehicles\bin\Debug\Vehicles.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\Vehicles\bin\Debug\Vehicles.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\Vehicles\obj\Debug\Vehicles.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\Vehicles\obj\Debug\Vehicles.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\Vehicles\obj\Debug\Vehicles.pdb

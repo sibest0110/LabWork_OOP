@@ -1,0 +1,9 @@
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\bin\Debug\ConsoleTests.exe.config
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\bin\Debug\ConsoleTests.exe
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\bin\Debug\ConsoleTests.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\bin\Debug\Vehicles.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\bin\Debug\Vehicles.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\obj\Debug\ConsoleTests.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\obj\Debug\ConsoleTests.csproj.CopyComplete
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\obj\Debug\ConsoleTests.exe
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-3\Vehicles\ConsoleTests\obj\Debug\ConsoleTests.pdb
