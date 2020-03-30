@@ -19,12 +19,11 @@ namespace Vehicles
         public Helicopter(string name, double weight)
         {
             Weight = weight;
-            Type = VehiclesTypes.Helicopter;
+            //TODO: СПЕЦИАЛЬНО ДЛЯ ДЕМОНСТРАЦИИ ТЕСТА
+            //Type = VehiclesTypes.Helicopter;
             Name = name;
         }
-        //public Helicopter() => Type = VehiclesTypes.Helicopter;
-        // СПЕЦИАЛЬНО ДЛЯ ДЕМОНСТРАЦИИ ТЕСТА
-        public Helicopter() { }
+        public Helicopter() => Type = VehiclesTypes.Helicopter;
 
         /// <summary>
         /// Определение расхода топлива

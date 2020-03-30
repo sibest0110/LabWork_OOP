@@ -11,7 +11,7 @@ namespace Vehicles
     /// </summary>
     public abstract class VehiclesBase : IFuelCosts
     {
-        public string Name { get; protected set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Тип транспортного средства
@@ -57,5 +57,33 @@ namespace Vehicles
         /// не приведённых в интерфейсе (инкапсуляция)
         /// </summary>
         public abstract void Beep();
+
+        /// <summary>
+        /// Получение класса ТС по его типу
+        /// </summary>
+        /// <param name="enumType">Тип ТС по набору VehiclesTypes</param>
+        /// <returns></returns>
+        public static Type GetClassByType(VehiclesTypes enumType)
+        {
+            switch (enumType)
+            {
+                case VehiclesTypes.Car:
+                {
+                    return typeof(Car);
+                }
+                case VehiclesTypes.HybridCar:
+                {
+                    return typeof(HybridCar);
+                }
+                case VehiclesTypes.Helicopter:
+                {
+                    return typeof(Helicopter);
+                }
+                default:
+                {
+                    throw new ArgumentException("Передан несуществующий тип ТС!");
+                }
+            }
+        }
     }
 }

@@ -13,45 +13,133 @@ namespace ConsoleTests
     {
         static void Main(string[] args)
         {
-            ReadKey();
-            TestsForVehicles();
-
-
-            WriteLine($"Демонстрация работы бизнес логики");
-            //TODO: В следующей редакции реализовать ввод через консоль
-            var vehicles = new List<IFuelCosts>
-            {
-                new Car("Солярис", 900),
-                new HybridCar("Приус", 900),
-                new Helicopter("OHDUDE", 4000)
-            };
-
-            foreach (IFuelCosts veh in vehicles)
-            {
-                WriteLine(
-                    $"{(veh as VehiclesBase).Name} потратит" +
-                    $" {veh.FuelCost(100)} литров топлива " +
-                    $"чтобы преодалеть {veh.Distance} км.");
-            }
-
-
-
-
-            ReadKey();
-
+            Welcome();
+            MenuStart();
         }
 
+        /// <summary>
+        /// Текст приветствия
+        /// </summary>
+        private static void Welcome()
+        {
+            ColorOutput("Д", ConsoleColor.Yellow);
+            ColorOutput("о", ConsoleColor.Cyan);
+            ColorOutput("б", ConsoleColor.Green);
+            ColorOutput("р", ConsoleColor.White);
+            ColorOutput("о ", ConsoleColor.DarkCyan);
+            ColorOutput("п", ConsoleColor.Blue);
+            ColorOutput("о", ConsoleColor.DarkGreen);
+            ColorOutput("ж", ConsoleColor.Magenta);
+            ColorOutput("а", ConsoleColor.DarkYellow);
+            ColorOutput("л", ConsoleColor.DarkBlue);
+            ColorOutput("о", ConsoleColor.DarkMagenta);
+            ColorOutput("в", ConsoleColor.Yellow);
+            ColorOutput("а", ConsoleColor.White);
+            ColorOutput("т", ConsoleColor.Blue);
+            ColorOutput("ь!", ConsoleColor.Cyan);
+            WriteLine();
+        }
 
+        /// <summary>
+        /// Стартовое меню
+        /// </summary>
+        private static void MenuStart()
+        {
+            while(true)
+            {
+                WriteLine(
+                   $"Выберите задачу:" +
+                   $"\n1 - Запустить тесты для классов Транспортных средств" +
+                   $"\n2 - Выполнение программы согласно заданию" +
+                   $"\n\nДля выхода из программы нажмите любую другую кнопку!");
+                switch (ReadKey(true).KeyChar)
+                {
+                    case '1':
+                    {
+                        TestsForVehicles();
+                        Clear();
+                        break;
+                    }
+                    case '2':
+                    {
+                        MenuFuelCosts();
+                        Clear();
+                        break;
+                    }
+                    default:
+                    {
+                        return;
+                    }
+                }
+            }
+        }
 
+        /// <summary>
+        /// Меню ручного создания ТС и получения затрачиваемого топлива на вводимую дистанцию
+        /// </summary>
+        private static void MenuFuelCosts()
+        {
+            while (true)
+            {
+                IFuelCosts vehicle;
+                Clear();
+                WriteLine($"Демонстрация работы бизнес логики\n");
+                WriteLine(
+                    $"Необходимо выбрать тип транспортного средства:" +
+                    $"\n1 - Автомобиль с ДВС" +
+                    $"\n2 - Гибридный автомобиль" +
+                    $"\n3 - Вертолёт" +
+                    $"\n\nДля выхода в предыдущее меню нажмите любую другую кнопку");
+                switch (ReadKey(true).KeyChar)
+                {
+                    case '1':
+                    {
+                        Clear();
+                        vehicle = IO.CreateVehicle(VehiclesTypes.Car);
+                        break;
+                    }
+                    case '2':
+                    {
+                        Clear();
+                        vehicle = IO.CreateVehicle(VehiclesTypes.HybridCar);
+                        break;
+                    }
+                    case '3':
+                    {
+                        Clear();
+                        vehicle = IO.CreateVehicle(VehiclesTypes.Helicopter);
+                        break;
+                    }
+                    default:
+                    {
+                        return;
+                    }
+                }
+                WriteLine($"\nДля {(vehicle as VehiclesBase).Type} " +
+                    $"{(vehicle as VehiclesBase).Name} " +
+                    $"на {vehicle.Distance} км потребуется " +
+                    $"{vehicle.FuelCost(vehicle.Distance)} литров топлива");
+                WriteLine("Нажмите любую кнопку");
+                ReadKey();
+            }
+        }
 
+        /// <summary>
+        /// Запуск тестов для приведённых в данном методе типов ТС
+        /// </summary>
         private static void TestsForVehicles()
         {
+            Clear();
             WriteLine($"Запущен тест Транспортных средств\n");
 
             WriteLine($"Информация по свойствам:" +
                 $"\nName /string/ - на данный момент ограничений нет" +
-                $"\nType /enum.VehiclesTypes/ - должен соответствовать соответствующему классу" +
+
+                $"\nType /enum.VehiclesTypes/ - должен соответствовать " +
+                $"соответствующему классу (реализация в конструкторе)" +
+
                 $"\nWeight /double/ - должна быть не отрицательная" +
+
                 $"\nDistance /double/ - должна быть не отрицательная");
 
 
@@ -69,6 +157,10 @@ namespace ConsoleTests
             ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n", ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestWeightAndDistance);
 
+
+            WriteLine("Тесты завершены. " +
+                "Для возврата в меню нажмите любую кнопку");
+            ReadKey();
         }
 
         /// <summary>
@@ -214,7 +306,7 @@ namespace ConsoleTests
         /// </summary>
         /// <param name="message">Сообщение</param>
         /// <param name="color">Цвет</param>
-        private static void ColorOutput(string message, ConsoleColor color)
+        public static void ColorOutput(string message, ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.Write(message);
