@@ -110,3 +110,18 @@ H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О
 H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
 H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
 H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\lastname_f.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\lastname_m.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\name_f.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\name_m.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb

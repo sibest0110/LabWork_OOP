@@ -15,22 +15,22 @@ namespace PersonLib
         /// <summary>
         /// Путь к файлу с мужскими именами
         /// </summary>
-        private const string pathMaleNames = "name_m.txt";
+        private const string pathMaleNames = "data/name_m.txt";
 
         /// <summary>
         /// Путь к файлу с женскими именами
         /// </summary>
-        private const string pathFemaleNames = "name_f.txt";
+        private const string pathFemaleNames = "data/name_f.txt";
 
         /// <summary>
         /// Путь к файлу с мужскими фамилиями
         /// </summary>
-        private const string pathMaleLastnames = "lastname_m.txt";
+        private const string pathMaleLastnames = "data/lastname_m.txt";
 
         /// <summary>
         /// Путь к файлу с женскими фамилиями
         /// </summary>
-        private const string pathFemaleLastnames = "lastname_f.txt";
+        private const string pathFemaleLastnames = "data/lastname_f.txt";
 
 
         /// <summary>

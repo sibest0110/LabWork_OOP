@@ -77,3 +77,15 @@ H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О
 H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.csproj.CopyComplete
 H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.dll
 H:\Преподаватели\Калентьев (Основы ООП)\5am8r (О-5КМ81)\Фоменко\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\data\lastname_f.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\data\lastname_m.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\data\name_f.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\data\name_m.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.csproj.CopyComplete
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\PersonLib\obj\Debug\PersonLib.pdb

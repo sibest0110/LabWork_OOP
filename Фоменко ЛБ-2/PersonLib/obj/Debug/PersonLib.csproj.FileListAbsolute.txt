@@ -103,3 +103,18 @@ F:\Фоменко\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.csproj.Cor
 F:\Фоменко\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.csproj.CopyComplete
 F:\Фоменко\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.dll
 F:\Фоменко\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\ExternalFilesLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\ExternalFilesLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.csproj.CopyComplete
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.dll
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\obj\Debug\PersonLib.pdb
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\lastname_f.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\lastname_m.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\name_f.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\name_m.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\Список компаний.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\Список Садиков.txt
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-2\PersonLib\bin\Debug\data\Список Школ.txt
