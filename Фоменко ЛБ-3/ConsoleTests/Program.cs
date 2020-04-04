@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Vehicles;
 using static System.Console;
 using System.Reflection;
+using System.Threading;
 
 namespace ConsoleTests
 {
@@ -22,21 +23,44 @@ namespace ConsoleTests
         /// </summary>
         private static void Welcome()
         {
-            ColorOutput("Д", ConsoleColor.Yellow);
-            ColorOutput("о", ConsoleColor.Cyan);
-            ColorOutput("б", ConsoleColor.Green);
-            ColorOutput("р", ConsoleColor.White);
-            ColorOutput("о ", ConsoleColor.DarkCyan);
-            ColorOutput("п", ConsoleColor.Blue);
-            ColorOutput("о", ConsoleColor.DarkGreen);
-            ColorOutput("ж", ConsoleColor.Magenta);
-            ColorOutput("а", ConsoleColor.DarkYellow);
-            ColorOutput("л", ConsoleColor.DarkBlue);
-            ColorOutput("о", ConsoleColor.DarkMagenta);
-            ColorOutput("в", ConsoleColor.Yellow);
-            ColorOutput("а", ConsoleColor.White);
-            ColorOutput("т", ConsoleColor.Blue);
-            ColorOutput("ь!", ConsoleColor.Cyan);
+            var lettersOfMessage = new List<Action>
+            {
+                new Action(()=> ColorOutput("Д", ConsoleColor.Yellow)),
+                new Action(()=> ColorOutput("о", ConsoleColor.Cyan)),
+                new Action(()=> ColorOutput("б", ConsoleColor.Green)),
+                new Action(()=> ColorOutput("р", ConsoleColor.White)),
+                new Action(()=> ColorOutput("о ", ConsoleColor.DarkCyan)),
+                new Action(()=> ColorOutput("п", ConsoleColor.Blue)),
+                new Action(()=> ColorOutput("о", ConsoleColor.DarkGreen)),
+                new Action(()=> ColorOutput("ж", ConsoleColor.Magenta)),
+                new Action(()=> ColorOutput("а", ConsoleColor.DarkYellow)),
+                new Action(()=> ColorOutput("л", ConsoleColor.DarkBlue)),
+                new Action(()=> ColorOutput("о", ConsoleColor.DarkMagenta)),
+                new Action(()=> ColorOutput("в", ConsoleColor.Yellow)),
+                new Action(()=> ColorOutput("а", ConsoleColor.White)),
+                new Action(()=> ColorOutput("т", ConsoleColor.Blue)),
+                new Action(()=> ColorOutput("ь!", ConsoleColor.Cyan))
+            };
+
+            // Псевдокрасивый вывод приветствия
+            for (int i = 0; i < lettersOfMessage.Count; i++)
+            {
+                // Пустая позиция на месте предыдущих букв
+                for (int empty = 0; empty < i; empty++)
+                {
+                    Write(" ");
+                }
+                lettersOfMessage[i].Invoke();
+
+                Thread.Sleep(50);
+
+                Clear();
+            }
+            foreach (var action in lettersOfMessage)
+            {
+                action.Invoke();
+            }
+
             WriteLine();
         }
 
@@ -45,7 +69,7 @@ namespace ConsoleTests
         /// </summary>
         private static void MenuStart()
         {
-            while(true)
+            while (true)
             {
                 WriteLine(
                    $"Выберите задачу:" +
