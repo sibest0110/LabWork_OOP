@@ -11,6 +11,8 @@ namespace Vehicles
     /// </summary>
     public abstract class VehiclesBase : IFuelCosts
     {
+        //TODO: XML
+        //TODO: Совсем без проверок?
         public string Name { get; set; }
 
         /// <summary>
@@ -58,6 +60,7 @@ namespace Vehicles
         /// </summary>
         public abstract void Beep();
 
+        //TODO: Базовый класс ничего не должен знать о наследниках - этот метод стоит вынести
         /// <summary>
         /// Получение класса ТС по его типу
         /// </summary>

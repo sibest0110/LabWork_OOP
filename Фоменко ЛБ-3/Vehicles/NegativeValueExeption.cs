@@ -11,6 +11,7 @@ namespace Vehicles
     /// </summary>
     public class NegativeValueExeption : Exception
     {
+        //TODO: XML
         private string _argumentForMessage;
 
         /// <summary>
@@ -21,6 +22,8 @@ namespace Vehicles
         {
             _argumentForMessage = argument;
         }
+
+        //TODO: XML или, если передать в конструктор base - можно не перегружать свойство
         public override string Message => 
             $"{_argumentForMessage} не может быть отрицательным числом";
     }

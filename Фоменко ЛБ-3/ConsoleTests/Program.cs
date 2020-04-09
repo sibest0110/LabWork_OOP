@@ -10,8 +10,10 @@ using System.Threading;
 
 namespace ConsoleTests
 {
+    //TODO: RSDN
     class Program
     {
+        //TODO: RSDN
         static void Main(string[] args)
         {
             Welcome();
@@ -174,10 +176,11 @@ namespace ConsoleTests
                 typeof(Helicopter)
             };
 
+            //TODO: RSDN
             ColorOutput($"\nПроверка Type каждого класса наследника:\n", ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestVehiclesType);
 
-
+            //TODO: RSDN
             ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n", ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestWeightAndDistance);
 
@@ -216,7 +219,7 @@ namespace ConsoleTests
                 new object[] { "Название ТС", 1000 });
 
             var nameOfClass = typeOfClassVehicles.ToString().Split('.');
-
+            //TODO: Дубль ниже
             Write($"Свойство Type = {(defVehicle as VehiclesBase).Type} " +
                 $"(конструктор по умолчанию)");
             if (nameOfClass[nameOfClass.Length - 1]
@@ -228,7 +231,7 @@ namespace ConsoleTests
             {
                 ColorOutput($"\t Fail\n", ConsoleColor.Red);
             }
-
+            //TODO: Дубль выше
             Write($"Свойство Type = {(paramVehicle as VehiclesBase).Type} " +
                 $"(конструктор с параметрами)");
             if (nameOfClass[nameOfClass.Length - 1]
@@ -243,6 +246,7 @@ namespace ConsoleTests
             WriteLine();
         }
 
+        //TODO: XML
         private static void TestWeightAndDistance(Type typeOfClassVehicles)
         {
             WriteLine($"- Класс {typeOfClassVehicles}:");

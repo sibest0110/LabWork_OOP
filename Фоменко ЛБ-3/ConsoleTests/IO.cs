@@ -30,6 +30,7 @@ namespace ConsoleTests
 
             var settingsParams = new List<Action>
             {
+                //TODO зачем кастить, если это итак vehicleBase?
                 SetName(vehicle as VehiclesBase),
                 SetWeight(vehicle as VehiclesBase),
                 SetDistance(vehicle as VehiclesBase)

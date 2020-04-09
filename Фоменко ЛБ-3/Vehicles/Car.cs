@@ -22,6 +22,7 @@ namespace Vehicles
             Type = VehiclesTypes.Car;
             Name = name;
         }
+        //TODO: XML
         public Car() => Type = VehiclesTypes.Car;
 
 

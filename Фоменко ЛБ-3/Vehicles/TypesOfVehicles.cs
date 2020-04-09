@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
+    //TODO: XML
     public enum VehiclesTypes
     {
         Car,

@@ -22,6 +22,7 @@ namespace Vehicles
             Type = VehiclesTypes.HybridCar;
             Name = name;
         }
+        //TODO: XML
         public HybridCar() => Type = VehiclesTypes.HybridCar;
 
 

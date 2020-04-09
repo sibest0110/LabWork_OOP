@@ -23,6 +23,7 @@ namespace Vehicles
             //Type = VehiclesTypes.Helicopter;
             Name = name;
         }
+        //TODO: XML
         public Helicopter() => Type = VehiclesTypes.Helicopter;
 
         /// <summary>
