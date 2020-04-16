@@ -45,19 +45,19 @@ namespace ConsoleTests
             };
 
             // Псевдокрасивый вывод приветствия
-            for (int i = 0; i < lettersOfMessage.Count; i++)
-            {
-                // Пустая позиция на месте предыдущих букв
-                for (int empty = 0; empty < i; empty++)
-                {
-                    Write(" ");
-                }
-                lettersOfMessage[i].Invoke();
+            //for (int i = 0; i < lettersOfMessage.Count; i++)
+            //{
+            //    // Пустая позиция на месте предыдущих букв
+            //    for (int empty = 0; empty < i; empty++)
+            //    {
+            //        Write(" ");
+            //    }
+            //    lettersOfMessage[i].Invoke();
 
-                Thread.Sleep(50);
+            //    Thread.Sleep(50);
 
-                Clear();
-            }
+            //    Clear();
+            //}
             foreach (var action in lettersOfMessage)
             {
                 action.Invoke();
@@ -300,7 +300,7 @@ namespace ConsoleTests
 
                 try
                 {
-                    // Проверка от совсем дураокв
+                    // Проверка от совсем дураков
                     double testDoubleData = Convert.ToDouble(testData);
 
                     // Проверка работы свойства класса
@@ -347,8 +347,10 @@ namespace ConsoleTests
             WriteLine();
         }
 
-        //TODO XXXXXXXXMMMMMMMMMMLLLLLLLLLLL
-
+        /// <summary>
+        /// Тестирование ввода значений названия ТС
+        /// </summary>
+        /// <param name="typeOfClassVehicles">Класс ТС</param>
         private static void TestName(Type typeOfClassVehicles)
         {
             WriteLine($"- Класс {typeOfClassVehicles}:");
