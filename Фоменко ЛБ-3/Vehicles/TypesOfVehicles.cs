@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
-    //TODO: XML
+    //TODO: (v) XML
+    /// <summary>
+    /// Перечень типов ТС
+    /// </summary>
     public enum VehiclesTypes
     {
         Car,

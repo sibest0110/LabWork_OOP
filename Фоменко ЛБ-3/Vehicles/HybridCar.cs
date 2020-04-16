@@ -22,7 +22,10 @@ namespace Vehicles
             Type = VehiclesTypes.HybridCar;
             Name = name;
         }
-        //TODO: XML
+        //TODO: (v) XML
+        /// <summary>
+        /// Конструктор по умолчанию. Присваивается только тип ТС.
+        /// </summary>
         public HybridCar() => Type = VehiclesTypes.HybridCar;
 
 

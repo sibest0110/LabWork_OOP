@@ -11,9 +11,20 @@ namespace Vehicles
     /// </summary>
     public abstract class VehiclesBase : IFuelCosts
     {
-        //TODO: XML
-        //TODO: Совсем без проверок?
-        public string Name { get; set; }
+        private string _name = "empty name";
+
+        //TODO: (v) XML
+        //TODO: (v) Совсем без проверок?
+        // Согласен, не кошерно
+        /// <summary>
+        /// Название ТС
+        /// </summary>
+        public string Name
+        {
+            get => _name;
+            set => _name = (value != null && value.Replace(" ", "") != "") 
+                ? value : throw new Exception("Имя не может быть пустым! ");
+        }
 
         /// <summary>
         /// Тип транспортного средства

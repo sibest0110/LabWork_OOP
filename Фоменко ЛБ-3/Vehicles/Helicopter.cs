@@ -19,11 +19,13 @@ namespace Vehicles
         public Helicopter(string name, double weight)
         {
             Weight = weight;
-            //TODO: СПЕЦИАЛЬНО ДЛЯ ДЕМОНСТРАЦИИ ТЕСТА
-            //Type = VehiclesTypes.Helicopter;
+            Type = VehiclesTypes.Helicopter;
             Name = name;
         }
-        //TODO: XML
+        //TODO: (v) XML
+        /// <summary>
+        /// Конструктор по умолчанию. Присваивается только тип ТС.
+        /// </summary>
         public Helicopter() => Type = VehiclesTypes.Helicopter;
 
         /// <summary>

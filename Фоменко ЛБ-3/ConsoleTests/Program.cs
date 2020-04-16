@@ -10,11 +10,11 @@ using System.Threading;
 
 namespace ConsoleTests
 {
-    //TODO: RSDN
-    class Program
+    //TODO: (v) RSDN
+    public class Program
     {
-        //TODO: RSDN
-        static void Main(string[] args)
+        //TODO: (v) RSDN
+        public static void Main(string[] args)
         {
             Welcome();
             MenuStart();
@@ -176,12 +176,14 @@ namespace ConsoleTests
                 typeof(Helicopter)
             };
 
-            //TODO: RSDN
-            ColorOutput($"\nПроверка Type каждого класса наследника:\n", ConsoleColor.Yellow);
+            //TODO: (v) RSDN
+            ColorOutput($"\nПроверка Type каждого класса наследника:\n", 
+                ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestVehiclesType);
 
-            //TODO: RSDN
-            ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n", ConsoleColor.Yellow);
+            //TODO: (v) RSDN
+            ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n", 
+                ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestWeightAndDistance);
 
 
@@ -246,32 +248,41 @@ namespace ConsoleTests
             WriteLine();
         }
 
-        //TODO: XML
+        // Так как потом через оконное приложение вводить данные,
+        // поэтому сразу работать с массой, как изначально строковым
+        // значением
+        /// <summary>
+        /// Данные со всевозможными вариациями значений
+        /// </summary>
+        private static List<string> _monkeyData = new List<string>
+        {
+            "123",
+            "0",
+            "-1",
+            "99999999999999",
+            "@!#",
+            "12 321",
+            "",
+            " ",
+            null,
+            "буквы",
+            "100 кило",
+            "13.37",
+            "3,14159"
+        };
+
+
+        //TODO: (v) XML
+        /// <summary>
+        /// Тестирование ввода значений массы автомобиля и дистанции.
+        /// </summary>
+        /// <param name="typeOfClassVehicles">Класс ТС</param>
         private static void TestWeightAndDistance(Type typeOfClassVehicles)
         {
             WriteLine($"- Класс {typeOfClassVehicles}:");
 
 
-            // Так как потом через оконное приложение вводить данные,
-            // поэтому сразу работать с массой, как изначально строковым
-            // значением
-            var monkeyData = new List<string>
-            {
-                "123",
-                "0",
-                "-1",
-                "99999999999999",
-                "@!#",
-                "12 321",
-                "",
-                " ",
-                null,
-                "масса",
-                "100 кило"
-            };
-
-
-            foreach (var testData in monkeyData)
+            foreach (var testData in _monkeyData)
             {
                 Write($"Вводимая масса/дистанция = {testData}");
 
@@ -330,7 +341,7 @@ namespace ConsoleTests
         }
 
         /// <summary>
-        /// Console.Writeline() с цветом
+        /// Console.Write() с цветом
         /// </summary>
         /// <param name="message">Сообщение</param>
         /// <param name="color">Цвет</param>
