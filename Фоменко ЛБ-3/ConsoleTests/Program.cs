@@ -159,7 +159,7 @@ namespace ConsoleTests
             WriteLine($"Запущен тест Транспортных средств\n");
 
             WriteLine($"Информация по свойствам:" +
-                $"\nName /string/ - на данный момент ограничений нет" +
+                $"\nName /string/ - не пустое (пробелы) и не null" +
 
                 $"\nType /enum.VehiclesTypes/ - должен соответствовать " +
                 $"соответствующему классу (реализация в конструкторе)" +
@@ -177,14 +177,21 @@ namespace ConsoleTests
             };
 
             //TODO: (v) RSDN
-            ColorOutput($"\nПроверка Type каждого класса наследника:\n", 
+            ColorOutput($"\nПроверка Type каждого класса наследника:\n",
                 ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestVehiclesType);
 
             //TODO: (v) RSDN
-            ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n", 
+            ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n",
                 ConsoleColor.Yellow);
-            typesOfVehicles.ForEach(TestWeightAndDistance);
+            typesOfVehicles.ForEach(TestWeightAndDistance); 
+            
+            
+            ColorOutput($"\nПроверка ввода названия ТС:\n",
+                ConsoleColor.Yellow);
+            typesOfVehicles.ForEach(TestName);
+
+
 
 
             WriteLine("Тесты завершены. " +
@@ -334,6 +341,35 @@ namespace ConsoleTests
                 catch
                 {
                     ColorOutput($"\tFail Fail\n", ConsoleColor.Red);
+                }
+
+            }
+            WriteLine();
+        }
+
+        //TODO XXXXXXXXMMMMMMMMMMLLLLLLLLLLL
+
+        private static void TestName(Type typeOfClassVehicles)
+        {
+            WriteLine($"- Класс {typeOfClassVehicles}:");
+
+            foreach (var testData in _monkeyData)
+            {
+                Write($"Вводимое название ТС = {testData}");
+
+                ConstructorInfo defCons =
+                    typeOfClassVehicles.GetConstructor(new Type[] { });
+
+                var defVehicle = defCons.Invoke(new object[] { });
+
+                try
+                {
+                    (defVehicle as VehiclesBase).Name = testData;
+                    ColorOutput($"\tOK\n", ConsoleColor.Green);
+                }
+                catch
+                {
+                    ColorOutput($"\tFail\n", ConsoleColor.Red);
                 }
 
             }
