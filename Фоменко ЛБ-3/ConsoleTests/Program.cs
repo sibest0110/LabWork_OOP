@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Vehicles;
 using static System.Console;
 using System.Reflection;
-using System.Threading;
 
 namespace ConsoleTests
 {
@@ -190,8 +189,6 @@ namespace ConsoleTests
             ColorOutput($"\nПроверка ввода названия ТС:\n",
                 ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestName);
-
-
 
 
             WriteLine("Тесты завершены. " +
