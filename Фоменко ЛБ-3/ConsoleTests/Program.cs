@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using Vehicles;
 using static System.Console;
 using System.Reflection;
-using System.Threading;
 
 namespace ConsoleTests
 {
-    class Program
+    //TODO: (v) RSDN
+    public class Program
     {
-        static void Main(string[] args)
+        //TODO: (v) RSDN
+        public static void Main(string[] args)
         {
             Welcome();
             MenuStart();
@@ -43,19 +44,19 @@ namespace ConsoleTests
             };
 
             // Псевдокрасивый вывод приветствия
-            for (int i = 0; i < lettersOfMessage.Count; i++)
-            {
-                // Пустая позиция на месте предыдущих букв
-                for (int empty = 0; empty < i; empty++)
-                {
-                    Write(" ");
-                }
-                lettersOfMessage[i].Invoke();
+            //for (int i = 0; i < lettersOfMessage.Count; i++)
+            //{
+            //    // Пустая позиция на месте предыдущих букв
+            //    for (int empty = 0; empty < i; empty++)
+            //    {
+            //        Write(" ");
+            //    }
+            //    lettersOfMessage[i].Invoke();
 
-                Thread.Sleep(50);
+            //    Thread.Sleep(50);
 
-                Clear();
-            }
+            //    Clear();
+            //}
             foreach (var action in lettersOfMessage)
             {
                 action.Invoke();
@@ -157,7 +158,7 @@ namespace ConsoleTests
             WriteLine($"Запущен тест Транспортных средств\n");
 
             WriteLine($"Информация по свойствам:" +
-                $"\nName /string/ - на данный момент ограничений нет" +
+                $"\nName /string/ - не пустое (пробелы) и не null" +
 
                 $"\nType /enum.VehiclesTypes/ - должен соответствовать " +
                 $"соответствующему классу (реализация в конструкторе)" +
@@ -174,12 +175,20 @@ namespace ConsoleTests
                 typeof(Helicopter)
             };
 
-            ColorOutput($"\nПроверка Type каждого класса наследника:\n", ConsoleColor.Yellow);
+            //TODO: (v) RSDN
+            ColorOutput($"\nПроверка Type каждого класса наследника:\n",
+                ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestVehiclesType);
 
-
-            ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n", ConsoleColor.Yellow);
-            typesOfVehicles.ForEach(TestWeightAndDistance);
+            //TODO: (v) RSDN
+            ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n",
+                ConsoleColor.Yellow);
+            typesOfVehicles.ForEach(TestWeightAndDistance); 
+            
+            
+            ColorOutput($"\nПроверка ввода названия ТС:\n",
+                ConsoleColor.Yellow);
+            typesOfVehicles.ForEach(TestName);
 
 
             WriteLine("Тесты завершены. " +
@@ -215,59 +224,77 @@ namespace ConsoleTests
             var paramVehicle = paramCons.Invoke(
                 new object[] { "Название ТС", 1000 });
 
-            var nameOfClass = typeOfClassVehicles.ToString().Split('.');
+            var nameOfClass = 
+                typeOfClassVehicles.ToString().Split('.').Last();
 
+
+            //TODO: (v) Дубль ниже
             Write($"Свойство Type = {(defVehicle as VehiclesBase).Type} " +
                 $"(конструктор по умолчанию)");
-            if (nameOfClass[nameOfClass.Length - 1]
-                == (defVehicle as VehiclesBase).Type.ToString())
-            {
-                ColorOutput($"\t OK\n", ConsoleColor.Green);
-            }
-            else
-            {
-                ColorOutput($"\t Fail\n", ConsoleColor.Red);
-            }
-
+            CheckVehicleType(nameOfClass, defVehicle as VehiclesBase);
+            
+            //TODO: (v) Дубль выше
             Write($"Свойство Type = {(paramVehicle as VehiclesBase).Type} " +
                 $"(конструктор с параметрами)");
-            if (nameOfClass[nameOfClass.Length - 1]
-                == (paramVehicle as VehiclesBase).Type.ToString())
-            {
-                ColorOutput($"\t OK\n", ConsoleColor.Green);
-            }
-            else
-            {
-                ColorOutput($"\t Fail\n", ConsoleColor.Red);
-            }
+            CheckVehicleType(nameOfClass, paramVehicle as VehiclesBase);
+
             WriteLine();
         }
 
+        /// <summary>
+        /// Вывод в консоль резултата проверки соответствия класса ТС его типу (Type)
+        /// </summary>
+        /// <param name="nameOfClass">Название класса ТС</param>
+        /// <param name="objVehicle">Экземпляр ТС</param>
+        private static void CheckVehicleType
+            (string nameOfClass, VehiclesBase objVehicle)
+        {
+            if (nameOfClass == objVehicle.Type.ToString())
+            {
+                ColorOutput($"\t OK\n", ConsoleColor.Green);
+            }
+            else
+            {
+                ColorOutput($"\t Fail\n", ConsoleColor.Red);
+            }
+        }
+
+
+        // Так как потом через оконное приложение вводить данные,
+        // поэтому сразу работать с массой, как изначально строковым
+        // значением
+        /// <summary>
+        /// Данные со всевозможными вариациями значений
+        /// </summary>
+        private static List<string> _monkeyData = new List<string>
+        {
+            "123",
+            "0",
+            "-1",
+            "99999999999999",
+            "@!#",
+            "12 321",
+            "",
+            " ",
+            null,
+            "буквы",
+            "100 кило",
+            "13.37",
+            "3,14159"
+        };
+
+
+        //TODO: (v) XML
+        /// <summary>
+        /// Тестирование ввода значений массы автомобиля и дистанции.
+        /// </summary>
+        /// <param name="typeOfClassVehicles">Класс ТС</param>
         private static void TestWeightAndDistance(Type typeOfClassVehicles)
         {
             WriteLine($"- Класс {typeOfClassVehicles}:");
 
 
-            // Так как потом через оконное приложение вводить данные,
-            // поэтому сразу работать с массой, как изначально строковым
-            // значением
-            var monkeyData = new List<string>
-            {
-                "123",
-                "0",
-                "-1",
-                "99999999999999",
-                "@!#",
-                "12 321",
-                "",
-                " ",
-                null,
-                "масса",
-                "100 кило"
-            };
-
-
-            foreach (var testData in monkeyData)
+            foreach (var testData in _monkeyData)
             {
                 Write($"Вводимая масса/дистанция = {testData}");
 
@@ -278,7 +305,7 @@ namespace ConsoleTests
 
                 try
                 {
-                    // Проверка от совсем дураокв
+                    // Проверка от совсем дураков
                     double testDoubleData = Convert.ToDouble(testData);
 
                     // Проверка работы свойства класса
@@ -326,7 +353,38 @@ namespace ConsoleTests
         }
 
         /// <summary>
-        /// Console.Writeline() с цветом
+        /// Тестирование ввода значений названия ТС
+        /// </summary>
+        /// <param name="typeOfClassVehicles">Класс ТС</param>
+        private static void TestName(Type typeOfClassVehicles)
+        {
+            WriteLine($"- Класс {typeOfClassVehicles}:");
+
+            foreach (var testData in _monkeyData)
+            {
+                Write($"Вводимое название ТС = {testData}");
+
+                ConstructorInfo defCons =
+                    typeOfClassVehicles.GetConstructor(new Type[] { });
+
+                var defVehicle = defCons.Invoke(new object[] { });
+
+                try
+                {
+                    (defVehicle as VehiclesBase).Name = testData;
+                    ColorOutput($"\tOK\n", ConsoleColor.Green);
+                }
+                catch
+                {
+                    ColorOutput($"\tFail\n", ConsoleColor.Red);
+                }
+
+            }
+            WriteLine();
+        }
+
+        /// <summary>
+        /// Console.Write() с цветом
         /// </summary>
         /// <param name="message">Сообщение</param>
         /// <param name="color">Цвет</param>

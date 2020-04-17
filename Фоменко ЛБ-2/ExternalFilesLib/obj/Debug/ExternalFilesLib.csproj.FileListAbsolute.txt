@@ -12,3 +12,8 @@ D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фомен
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.csprojAssemblyReference.cache
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.dll
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\Фоменко ЛБ-1\ExternalFilesLib\obj\Debug\ExternalFilesLib.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-2\ExternalFilesLib\bin\Debug\ExternalFilesLib.dll
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-2\ExternalFilesLib\bin\Debug\ExternalFilesLib.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-2\ExternalFilesLib\obj\Debug\ExternalFilesLib.csproj.CoreCompileInputs.cache
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-2\ExternalFilesLib\obj\Debug\ExternalFilesLib.dll
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-2\ExternalFilesLib\obj\Debug\ExternalFilesLib.pdb

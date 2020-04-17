@@ -125,3 +125,19 @@ D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\�
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\lastname_f.txt
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\lastname_m.txt
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\name_f.txt
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\data\name_m.txt
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe.config
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.exe
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\lab0_1.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.dll
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.dll
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\PersonLib.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\bin\Debug\ExternalFilesLib.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csprojAssemblyReference.cache
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CoreCompileInputs.cache
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.csproj.CopyComplete
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.exe
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-1\fomenko_oop\obj\Debug\lab0_1.pdb

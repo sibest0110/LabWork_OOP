@@ -16,3 +16,13 @@ D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\�
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.csproj.CopyComplete
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.exe
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\bin\Debug\ConsoleTests.exe.config
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\bin\Debug\ConsoleTests.exe
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\bin\Debug\ConsoleTests.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\bin\Debug\Vehicles.dll
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\bin\Debug\Vehicles.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.csproj.CoreCompileInputs.cache
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.csproj.CopyComplete
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.exe
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.pdb
+C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.csprojAssemblyReference.cache

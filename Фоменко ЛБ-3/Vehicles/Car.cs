@@ -22,6 +22,10 @@ namespace Vehicles
             Type = VehiclesTypes.Car;
             Name = name;
         }
+        //TODO: (v) XML
+        /// <summary>
+        /// Конструктор по умолчанию. Присваивается только тип ТС.
+        /// </summary>
         public Car() => Type = VehiclesTypes.Car;
 
 
