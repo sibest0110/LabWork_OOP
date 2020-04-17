@@ -23,7 +23,7 @@ namespace ConsoleTests
         {
             Console.WriteLine($"Выбранный тип ТС - {enumType}");
 
-            Type type = VehiclesBase.GetClassByType(enumType);
+            Type type = TypesOfVevicles.GetClassByType(enumType);
 
 
             var vehicle = (Activator.CreateInstance(type) as VehiclesBase);

@@ -227,24 +227,32 @@ namespace ConsoleTests
             var paramVehicle = paramCons.Invoke(
                 new object[] { "Название ТС", 1000 });
 
-            var nameOfClass = typeOfClassVehicles.ToString().Split('.');
-            //TODO: Дубль ниже
+            var nameOfClass = 
+                typeOfClassVehicles.ToString().Split('.').Last();
+
+
+            //TODO: (v) Дубль ниже
             Write($"Свойство Type = {(defVehicle as VehiclesBase).Type} " +
                 $"(конструктор по умолчанию)");
-            if (nameOfClass[nameOfClass.Length - 1]
-                == (defVehicle as VehiclesBase).Type.ToString())
-            {
-                ColorOutput($"\t OK\n", ConsoleColor.Green);
-            }
-            else
-            {
-                ColorOutput($"\t Fail\n", ConsoleColor.Red);
-            }
-            //TODO: Дубль выше
+            CheckVehicleType(nameOfClass, defVehicle as VehiclesBase);
+            
+            //TODO: (v) Дубль выше
             Write($"Свойство Type = {(paramVehicle as VehiclesBase).Type} " +
                 $"(конструктор с параметрами)");
-            if (nameOfClass[nameOfClass.Length - 1]
-                == (paramVehicle as VehiclesBase).Type.ToString())
+            CheckVehicleType(nameOfClass, paramVehicle as VehiclesBase);
+
+            WriteLine();
+        }
+
+        /// <summary>
+        /// Вывод в консоль резултата проверки соответствия класса ТС его типу (Type)
+        /// </summary>
+        /// <param name="nameOfClass">Название класса ТС</param>
+        /// <param name="objVehicle">Экземпляр ТС</param>
+        private static void CheckVehicleType
+            (string nameOfClass, VehiclesBase objVehicle)
+        {
+            if (nameOfClass == objVehicle.Type.ToString())
             {
                 ColorOutput($"\t OK\n", ConsoleColor.Green);
             }
@@ -252,8 +260,8 @@ namespace ConsoleTests
             {
                 ColorOutput($"\t Fail\n", ConsoleColor.Red);
             }
-            WriteLine();
         }
+
 
         // Так как потом через оконное приложение вводить данные,
         // поэтому сразу работать с массой, как изначально строковым
