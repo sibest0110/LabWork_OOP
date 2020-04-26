@@ -23,11 +23,7 @@ namespace FuelCostsOfVehicle
         {
             InitializeComponent();
 
-            comboBoxTypesOfVehicles.Items.Add("Car");
-            comboBoxTypesOfVehicles.Items.Add("HybridCar");
-            comboBoxTypesOfVehicles.Items.Add("Helicopter");
 
-            comboBoxTypesOfVehicles.Text = "-выбрать тип-";
             //dataGridViewMain.Columns.Add("Type", "Тип");
             //dataGridViewMain.Columns.Add("Name", "Название");
             //dataGridViewMain.Columns.Add("Weight", "Масса, кг");
@@ -45,103 +41,10 @@ namespace FuelCostsOfVehicle
         /// <param name="e">вопрос</param>
         private void buttonAddVehicle_Click(object sender, EventArgs e)
         {
-            try
-            {
-                switch (comboBoxTypesOfVehicles.Text)
-                {
-                    case "Car":
-                    {
-                        _totalListOfVehicles.Add(
-                            new Car(textBoxNameVehicle.Text,
-                            Convert.ToDouble(
-                                textBoxWeightVehicle.Text.Replace(".", ","))));
-                        break;
-                    }
-                    case "HybridCar":
-                    {
-                        _totalListOfVehicles.Add(
-                            new HybridCar(textBoxNameVehicle.Text,
-                            Convert.ToDouble(
-                                textBoxWeightVehicle.Text.Replace(".", ","))));
-                        break;
-                    }
-                    case "Helicopter":
-                    {
-                        _totalListOfVehicles.Add(
-                            new Helicopter(textBoxNameVehicle.Text,
-                            Convert.ToDouble(
-                                textBoxWeightVehicle.Text.Replace(".", ","))));
-                        break;
-                    }
-                    default:
-                    {
-                        MessageBox.Show(
-                            "Не указан тип ТС!", 
-                            "Тип транспортного средства", 
-                            MessageBoxButtons.OK, 
-                            MessageBoxIcon.Error);
-                        throw new Exception("Не указан тип ТС");
-                    }
-                }
-                dataGridViewMain.Rows.Add(
-                    comboBoxTypesOfVehicles.Text,
-                    textBoxNameVehicle.Text, 
-                    textBoxWeightVehicle.Text);
+            var addVehicleForm = 
+                new AddVehicleForm(this, _totalListOfVehicles);
 
-                comboBoxTypesOfVehicles.Text = "-выбрать тип-";
-                textBoxNameVehicle.Text = "";
-                textBoxWeightVehicle.Text = "";
-
-                MessageBox.Show("Транспортное средство добавлено!",
-                    "Добавление ТС",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                if (textBoxNameVehicle.Text=="")
-                {
-                    MessageBox.Show(
-                            "Не указано название ТС",
-                            "Название транспортного средства",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
-                if (textBoxWeightVehicle.Text == "")
-                {
-                    MessageBox.Show(
-                            "Не указана масса ТС!",
-                            "Масса транспортного средства",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show(
-                            $"{ex.Message}",
-                            "ИСКЛЮЧЕНИИЕ!",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
-            }
-        }
-
-
-        private double checkWeight()
-        {
-
-            try
-            {
-                return Convert.ToDouble(
-                    textBoxWeightVehicle.Text.Replace(".", ","));
-
-            }
-            catch (Exception ex)
-            {
-                textBoxWeightVehicle.Text = "Ошибка!";
-                MessageBox.Show("Неверно указана масса ТС!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return 0;
+            addVehicleForm.Show();
         }
 
 
