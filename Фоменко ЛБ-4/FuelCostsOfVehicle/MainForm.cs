@@ -41,7 +41,7 @@ namespace FuelCostsOfVehicle
         /// <param name="e">вопрос</param>
         private void buttonAddVehicle_Click(object sender, EventArgs e)
         {
-            var addVehicleForm = 
+            var addVehicleForm =
                 new AddVehicleForm(this, _totalListOfVehicles);
 
             addVehicleForm.Show();
@@ -95,6 +95,37 @@ namespace FuelCostsOfVehicle
             {
                 MessageBox.Show("Не получилось получить случайное ТС");
             }
+        }
+
+        private void buttonDeleteVehicle_Click(object sender, EventArgs e)
+        {
+            int counter = 0;
+            var listToRemove = new List<VehiclesBase> { };
+
+            foreach (DataGridViewRow delRow in dataGridViewMain.SelectedRows)
+            {
+                counter++;
+                dataGridViewMain.Rows.Remove(delRow);
+
+                foreach (VehiclesBase vehicle in _totalListOfVehicles)
+                {
+                    if (Convert.ToString(vehicle.Type) == Convert.ToString(delRow.Cells[0].Value) &&
+                        Convert.ToString(vehicle.Name) == Convert.ToString(delRow.Cells[1].Value) &&
+                        Convert.ToString(vehicle.Weight) == Convert.ToString(delRow.Cells[2].Value))
+                    {
+                        listToRemove.Add(vehicle);
+                    }
+                }
+            }
+            foreach (var remVehicle in listToRemove)
+            {
+                _totalListOfVehicles.Remove(remVehicle);
+            }
+
+            MessageBox.Show($"Удалено строк: {counter}",
+                "Удаление строк",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }

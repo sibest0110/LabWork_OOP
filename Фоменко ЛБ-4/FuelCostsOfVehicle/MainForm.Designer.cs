@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonDeleteVehicle = new System.Windows.Forms.Button();
             this.buttonRandVehicle = new System.Windows.Forms.Button();
             this.buttonAddVehicle = new System.Windows.Forms.Button();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
@@ -41,16 +42,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonDeleteVehicle);
             this.groupBox1.Controls.Add(this.buttonRandVehicle);
             this.groupBox1.Controls.Add(this.buttonAddVehicle);
             this.groupBox1.Controls.Add(this.dataGridViewMain);
-            this.groupBox1.Location = new System.Drawing.Point(183, 55);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 347);
+            this.groupBox1.Size = new System.Drawing.Size(450, 325);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // buttonDeleteVehicle
+            // 
+            this.buttonDeleteVehicle.Location = new System.Drawing.Point(6, 86);
+            this.buttonDeleteVehicle.Name = "buttonDeleteVehicle";
+            this.buttonDeleteVehicle.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteVehicle.TabIndex = 4;
+            this.buttonDeleteVehicle.Text = "Удалить";
+            this.buttonDeleteVehicle.UseVisualStyleBackColor = true;
+            this.buttonDeleteVehicle.Click += new System.EventHandler(this.buttonDeleteVehicle_Click);
             // 
             // buttonRandVehicle
             // 
@@ -68,12 +80,15 @@
             this.buttonAddVehicle.Name = "buttonAddVehicle";
             this.buttonAddVehicle.Size = new System.Drawing.Size(75, 23);
             this.buttonAddVehicle.TabIndex = 2;
-            this.buttonAddVehicle.Text = "AddVehicle";
+            this.buttonAddVehicle.Text = "Добавить";
             this.buttonAddVehicle.UseVisualStyleBackColor = true;
             this.buttonAddVehicle.Click += new System.EventHandler(this.buttonAddVehicle_Click);
             // 
             // dataGridViewMain
             // 
+            this.dataGridViewMain.AllowUserToDeleteRows = false;
+            this.dataGridViewMain.AllowUserToResizeColumns = false;
+            this.dataGridViewMain.AllowUserToResizeRows = false;
             this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TypeOfVehicle,
@@ -110,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 450);
+            this.ClientSize = new System.Drawing.Size(466, 340);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
@@ -130,6 +145,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameOfVehicle;
         private System.Windows.Forms.DataGridViewTextBoxColumn WeightOfVehicle;
         public System.Windows.Forms.DataGridView dataGridViewMain;
+        private System.Windows.Forms.Button buttonDeleteVehicle;
     }
 }
 
