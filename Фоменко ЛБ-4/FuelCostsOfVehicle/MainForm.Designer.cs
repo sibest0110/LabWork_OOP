@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxDataBase = new System.Windows.Forms.GroupBox();
+            this.buttonDownLoadDB = new System.Windows.Forms.Button();
+            this.buttonUpLoadDB = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonPullFullList = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonDeleteVehicle = new System.Windows.Forms.Button();
@@ -38,13 +41,14 @@
             this.TypeOfVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameOfVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WeightOfVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonHelp = new System.Windows.Forms.Button();
             this.groupBoxDataBase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxDataBase
             // 
+            this.groupBoxDataBase.Controls.Add(this.buttonDownLoadDB);
+            this.groupBoxDataBase.Controls.Add(this.buttonUpLoadDB);
             this.groupBoxDataBase.Controls.Add(this.buttonHelp);
             this.groupBoxDataBase.Controls.Add(this.buttonPullFullList);
             this.groupBoxDataBase.Controls.Add(this.buttonFind);
@@ -54,17 +58,49 @@
             this.groupBoxDataBase.Controls.Add(this.dataGridViewMain);
             this.groupBoxDataBase.Location = new System.Drawing.Point(12, 12);
             this.groupBoxDataBase.Name = "groupBoxDataBase";
-            this.groupBoxDataBase.Size = new System.Drawing.Size(450, 325);
+            this.groupBoxDataBase.Size = new System.Drawing.Size(426, 281);
             this.groupBoxDataBase.TabIndex = 0;
             this.groupBoxDataBase.TabStop = false;
             this.groupBoxDataBase.Text = "База данных ТС";
             this.groupBoxDataBase.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // buttonDownLoadDB
+            // 
+            this.buttonDownLoadDB.Location = new System.Drawing.Point(6, 248);
+            this.buttonDownLoadDB.Name = "buttonDownLoadDB";
+            this.buttonDownLoadDB.Size = new System.Drawing.Size(90, 23);
+            this.buttonDownLoadDB.TabIndex = 9;
+            this.buttonDownLoadDB.Text = "Загрузка БД";
+            this.buttonDownLoadDB.UseVisualStyleBackColor = true;
+            this.buttonDownLoadDB.Click += new System.EventHandler(this.buttonDownLoadDB_Click);
+            // 
+            // buttonUpLoadDB
+            // 
+            this.buttonUpLoadDB.Location = new System.Drawing.Point(6, 219);
+            this.buttonUpLoadDB.Name = "buttonUpLoadDB";
+            this.buttonUpLoadDB.Size = new System.Drawing.Size(90, 23);
+            this.buttonUpLoadDB.TabIndex = 8;
+            this.buttonUpLoadDB.Text = "Выгрузка БД";
+            this.buttonUpLoadDB.UseVisualStyleBackColor = true;
+            this.buttonUpLoadDB.Click += new System.EventHandler(this.buttonUpLoadDB_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonHelp.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonHelp.Location = new System.Drawing.Point(6, 179);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(89, 23);
+            this.buttonHelp.TabIndex = 7;
+            this.buttonHelp.Text = "Помощь";
+            this.buttonHelp.UseVisualStyleBackColor = false;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            // 
             // buttonPullFullList
             // 
             this.buttonPullFullList.Location = new System.Drawing.Point(6, 106);
             this.buttonPullFullList.Name = "buttonPullFullList";
-            this.buttonPullFullList.Size = new System.Drawing.Size(75, 38);
+            this.buttonPullFullList.Size = new System.Drawing.Size(89, 38);
             this.buttonPullFullList.TabIndex = 6;
             this.buttonPullFullList.Text = "Полный список";
             this.buttonPullFullList.UseVisualStyleBackColor = true;
@@ -74,7 +110,7 @@
             // 
             this.buttonFind.Location = new System.Drawing.Point(6, 150);
             this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(75, 23);
+            this.buttonFind.Size = new System.Drawing.Size(89, 23);
             this.buttonFind.TabIndex = 5;
             this.buttonFind.Text = "Поиск";
             this.buttonFind.UseVisualStyleBackColor = true;
@@ -84,7 +120,7 @@
             // 
             this.buttonDeleteVehicle.Location = new System.Drawing.Point(6, 48);
             this.buttonDeleteVehicle.Name = "buttonDeleteVehicle";
-            this.buttonDeleteVehicle.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteVehicle.Size = new System.Drawing.Size(89, 23);
             this.buttonDeleteVehicle.TabIndex = 4;
             this.buttonDeleteVehicle.Text = "Удалить";
             this.buttonDeleteVehicle.UseVisualStyleBackColor = true;
@@ -94,9 +130,9 @@
             // 
             this.buttonRandVehicle.Location = new System.Drawing.Point(6, 77);
             this.buttonRandVehicle.Name = "buttonRandVehicle";
-            this.buttonRandVehicle.Size = new System.Drawing.Size(75, 23);
+            this.buttonRandVehicle.Size = new System.Drawing.Size(89, 23);
             this.buttonRandVehicle.TabIndex = 3;
-            this.buttonRandVehicle.Text = "R";
+            this.buttonRandVehicle.Text = "!__RND__!";
             this.buttonRandVehicle.UseVisualStyleBackColor = true;
             this.buttonRandVehicle.Click += new System.EventHandler(this.buttonRandVehicle_Click);
             // 
@@ -104,7 +140,7 @@
             // 
             this.buttonAddVehicle.Location = new System.Drawing.Point(6, 19);
             this.buttonAddVehicle.Name = "buttonAddVehicle";
-            this.buttonAddVehicle.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddVehicle.Size = new System.Drawing.Size(89, 23);
             this.buttonAddVehicle.TabIndex = 2;
             this.buttonAddVehicle.Text = "Добавить";
             this.buttonAddVehicle.UseVisualStyleBackColor = true;
@@ -128,7 +164,6 @@
             this.dataGridViewMain.TabIndex = 1;
             this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellClick);
             this.dataGridViewMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellDoubleClick);
-            this.dataGridViewMain.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_RowHeaderMouseDoubleClick);
             // 
             // TypeOfVehicle
             // 
@@ -151,23 +186,11 @@
             this.WeightOfVehicle.ReadOnly = true;
             this.WeightOfVehicle.Width = 50;
             // 
-            // buttonHelp
-            // 
-            this.buttonHelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonHelp.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonHelp.Location = new System.Drawing.Point(6, 179);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(75, 23);
-            this.buttonHelp.TabIndex = 7;
-            this.buttonHelp.Text = "Помощь";
-            this.buttonHelp.UseVisualStyleBackColor = false;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 340);
+            this.ClientSize = new System.Drawing.Size(444, 302);
             this.Controls.Add(this.groupBoxDataBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -192,6 +215,8 @@
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonPullFullList;
         private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Button buttonDownLoadDB;
+        private System.Windows.Forms.Button buttonUpLoadDB;
     }
 }
 

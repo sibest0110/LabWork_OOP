@@ -23,10 +23,12 @@ namespace FuelCostsOfVehicle
         {
             InitializeComponent();
 
+#if DEBUG
+            buttonRandVehicle.Visible = true;
+#else
+            buttonRandVehicle.Visible = false;
+#endif
 
-            //dataGridViewMain.Columns.Add("Type", "Тип");
-            //dataGridViewMain.Columns.Add("Name", "Название");
-            //dataGridViewMain.Columns.Add("Weight", "Масса, кг");
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -158,11 +160,6 @@ namespace FuelCostsOfVehicle
             }
         }
 
-        private void dataGridViewMain_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            GetFuelCost();
-        }
-
         private void dataGridViewMain_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Чтобы не ломать при двойном клике колесом или ПКМ
@@ -236,10 +233,45 @@ namespace FuelCostsOfVehicle
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ReadingTXT.Read("readme\\help.txt"),
+            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
                 "Помощь",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Question);
+        }
+
+        private void buttonUpLoadDB_Click(object sender, EventArgs e)
+        {
+            List<string> exportList = new List<string> { };
+
+            foreach (DataGridViewRow row in dataGridViewMain.Rows)
+            {
+                string exportString = "";
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    exportString += $"{cell.Value}\\|/";
+                }
+                exportList.Add(exportString);
+            }
+
+            // Удаление последней пустой строки
+            exportList.RemoveAt(exportList.Count - 1);
+
+            if (exportList.Count==0)
+            {
+                MessageBox.Show("Невозможно выгрузить пустую базу данных",
+                    "Выгрузка БД",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            ExternalInteraction.UpLoadDataBase(exportList);
+        }
+
+        private void buttonDownLoadDB_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
