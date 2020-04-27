@@ -11,6 +11,9 @@ using Vehicles;
 
 namespace FuelCostsOfVehicle
 {
+    /// <summary>
+    /// Форма для добавления ТС
+    /// </summary>
     public partial class AddVehicleForm : Form
     {
         /// <summary>

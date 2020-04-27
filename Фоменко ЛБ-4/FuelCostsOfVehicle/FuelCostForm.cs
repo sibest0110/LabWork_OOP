@@ -11,6 +11,9 @@ using Vehicles;
 
 namespace FuelCostsOfVehicle
 {
+    /// <summary>
+    /// Форма для расчёта затрат топлива
+    /// </summary>
     public partial class FuelCostForm : Form
     {
         /// <summary>
@@ -23,6 +26,11 @@ namespace FuelCostsOfVehicle
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Форма с ссылкой на ТС, для которого рассматриваются затраты топлива. 
+        /// Необходимо использовать этот конструктор.
+        /// </summary>
+        /// <param name="vehicle"></param>
         public FuelCostForm(IFuelCosts vehicle)
             : this()
         {

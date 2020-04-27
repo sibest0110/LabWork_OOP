@@ -11,6 +11,9 @@ using Vehicles;
 
 namespace FuelCostsOfVehicle
 {
+    /// <summary>
+    /// Основная (главная) форма
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
@@ -24,134 +27,13 @@ namespace FuelCostsOfVehicle
             InitializeComponent();
 
 #if DEBUG
-            buttonRandVehicle.Visible = true;
+            toolStripButtonRandom.Visible = true;
 #else
-            buttonRandVehicle.Visible = false;
+            toolStripButtonRandom.Visible = false;
 #endif
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Нажатие на кнопку "Добавить ТС" (AddVehicle)
-        /// </summary>
-        /// <param name="sender">хороший</param>
-        /// <param name="e">вопрос</param>
-        private void buttonAddVehicle_Click(object sender, EventArgs e)
-        {
-            var addVehicleForm =
-                new AddVehicleForm(this, _totalListOfVehicles);
-
-            addVehicleForm.Show();
-        }
-
-
-        private void buttonRandVehicle_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dataGridViewMain.AllowUserToAddRows = true;
-                Random rand = new Random();
-
-
-                var weightCars = rand.Next(600, 2000);
-                var weightHelicopter = rand.Next(5000, 10000);
-                VehiclesBase vehicle = null;
-
-                var randomNumber = rand.Next(0, 3);
-                switch (randomNumber)
-                {
-                    case 0:
-                    {
-                        string name =
-                            $"Авто №{rand.Next(999)}";
-                        vehicle = new Car(name, weightCars);
-                        break;
-                    }
-                    case 1:
-                    {
-                        string name =
-                            $"Гибрид №{rand.Next(999)}";
-                        vehicle =
-                            new HybridCar(name, weightCars);
-                        break;
-                    }
-                    case 2:
-                    {
-                        string name =
-                            $"Вертолёт №{rand.Next(999)}";
-                        vehicle =
-                            new Helicopter(name, weightHelicopter);
-                        break;
-                    }
-                }
-                _totalListOfVehicles.Add(vehicle);
-                dataGridViewMain.Rows.Add
-                    (vehicle.Type, vehicle.Name, vehicle.Weight);
-            }
-            catch
-            {
-                MessageBox.Show("Не получилось получить случайное ТС");
-            }
-        }
-
-        private void buttonDeleteVehicle_Click(object sender, EventArgs e)
-        {
-            int counter = 0;
-            var listToRemove = new List<VehiclesBase> { };
-            try
-            {
-                foreach (DataGridViewRow delRow
-                    in dataGridViewMain.SelectedRows)
-                {
-                    counter++;
-                    dataGridViewMain.Rows.Remove(delRow);
-
-                    foreach (VehiclesBase vehicle in _totalListOfVehicles)
-                    {
-                        if (Convert.ToString(
-                            vehicle.Type) == Convert.ToString(
-                                            delRow.Cells[0].Value) &&
-                            Convert.ToString(
-                                vehicle.Name) == Convert.ToString(
-                                            delRow.Cells[1].Value) &&
-                            Convert.ToString(
-                                vehicle.Weight) == Convert.ToString(
-                                            delRow.Cells[2].Value))
-                        {
-                            listToRemove.Add(vehicle);
-                        }
-                    }
-                }
-                foreach (var remVehicle in listToRemove)
-                {
-                    _totalListOfVehicles.Remove(remVehicle);
-                }
-
-                MessageBox.Show($"Удалено строк: {counter}",
-                    "Удаление строк",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch { }
-        }
-
-        private void buttonFind_Click(object sender, EventArgs e)
-        {
-            FindForm findForm =
-                new FindForm(this, _totalListOfVehicles);
-
-            findForm.Show();
-        }
-
-        private void buttonPullFullList_Click(object sender, EventArgs e)
-        {
-            RefreshDataGrid();
-        }
 
         /// <summary>
         /// Обновляет содержимое DataGridView
@@ -205,11 +87,7 @@ namespace FuelCostsOfVehicle
                 {
                     return;
                 }
-            }
-            catch { }
 
-            try
-            {
                 var fuelCostForm = new FuelCostForm(FindVehicleBySelectedRow());
                 fuelCostForm.Show();
             }
@@ -239,54 +117,6 @@ namespace FuelCostsOfVehicle
                     "Ошибка в базе данных, срочно закройте программу!");
         }
 
-        private void buttonHelp_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
-                "Помощь",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Question);
-        }
-
-        private void buttonUpLoadDB_Click(object sender, EventArgs e)
-        {
-            List<string> exportList = new List<string> { };
-
-            foreach (DataGridViewRow row in dataGridViewMain.Rows)
-            {
-                string exportString = "";
-
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    exportString += $"{cell.Value}\\|/";
-                }
-                exportList.Add(exportString);
-            }
-
-            // Удаление последней пустой строки
-            exportList.RemoveAt(exportList.Count - 1);
-
-            if (exportList.Count == 0)
-            {
-                MessageBox.Show("Невозможно выгрузить пустую базу данных",
-                    "Выгрузка БД",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            ExternalInteraction.UpLoadDataBase(exportList);
-        }
-
-        private void buttonDownLoadDB_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _totalListOfVehicles = 
-                    ExternalInteraction.DownLoadDataBase();
-                RefreshDataGrid();
-            }
-            catch { }
-        }
 
         private void toolStripButtonHelp_Click(object sender, EventArgs e)
         {
@@ -358,6 +188,7 @@ namespace FuelCostsOfVehicle
             findForm.Show();
         }
 
+        //TODO: ПЕРЕДЕЛАТЬ СОХРАНЕНИЕ!
         private void toolStripButtonExport_Click(object sender, EventArgs e)
         {
             List<string> exportList = new List<string> { };
@@ -447,5 +278,6 @@ namespace FuelCostsOfVehicle
                 MessageBox.Show("Не получилось получить случайное ТС");
             }
         }
+
     }
 }

@@ -14,7 +14,6 @@ namespace FuelCostsOfVehicle
         [STAThread]
         static void Main()
         {
-            //TODO: ТОТАЛЬНЫЙ XML
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

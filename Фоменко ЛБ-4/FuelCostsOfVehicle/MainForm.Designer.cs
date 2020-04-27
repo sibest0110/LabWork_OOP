@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBoxDataBase = new System.Windows.Forms.GroupBox();
-            this.buttonDownLoadDB = new System.Windows.Forms.Button();
-            this.buttonUpLoadDB = new System.Windows.Forms.Button();
-            this.buttonHelp = new System.Windows.Forms.Button();
-            this.buttonPullFullList = new System.Windows.Forms.Button();
-            this.buttonFind = new System.Windows.Forms.Button();
-            this.buttonDeleteVehicle = new System.Windows.Forms.Button();
-            this.buttonRandVehicle = new System.Windows.Forms.Button();
-            this.buttonAddVehicle = new System.Windows.Forms.Button();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
             this.TypeOfVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameOfVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,104 +50,13 @@
             // 
             // groupBoxDataBase
             // 
-            this.groupBoxDataBase.Controls.Add(this.buttonDownLoadDB);
-            this.groupBoxDataBase.Controls.Add(this.buttonUpLoadDB);
-            this.groupBoxDataBase.Controls.Add(this.buttonHelp);
-            this.groupBoxDataBase.Controls.Add(this.buttonPullFullList);
-            this.groupBoxDataBase.Controls.Add(this.buttonFind);
-            this.groupBoxDataBase.Controls.Add(this.buttonDeleteVehicle);
-            this.groupBoxDataBase.Controls.Add(this.buttonRandVehicle);
-            this.groupBoxDataBase.Controls.Add(this.buttonAddVehicle);
             this.groupBoxDataBase.Controls.Add(this.dataGridViewMain);
             this.groupBoxDataBase.Location = new System.Drawing.Point(6, 28);
             this.groupBoxDataBase.Name = "groupBoxDataBase";
-            this.groupBoxDataBase.Size = new System.Drawing.Size(426, 281);
+            this.groupBoxDataBase.Size = new System.Drawing.Size(331, 281);
             this.groupBoxDataBase.TabIndex = 0;
             this.groupBoxDataBase.TabStop = false;
             this.groupBoxDataBase.Text = "База данных ТС";
-            this.groupBoxDataBase.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // buttonDownLoadDB
-            // 
-            this.buttonDownLoadDB.Location = new System.Drawing.Point(6, 248);
-            this.buttonDownLoadDB.Name = "buttonDownLoadDB";
-            this.buttonDownLoadDB.Size = new System.Drawing.Size(90, 23);
-            this.buttonDownLoadDB.TabIndex = 9;
-            this.buttonDownLoadDB.Text = "Загрузка БД";
-            this.buttonDownLoadDB.UseVisualStyleBackColor = true;
-            this.buttonDownLoadDB.Click += new System.EventHandler(this.buttonDownLoadDB_Click);
-            // 
-            // buttonUpLoadDB
-            // 
-            this.buttonUpLoadDB.Location = new System.Drawing.Point(6, 219);
-            this.buttonUpLoadDB.Name = "buttonUpLoadDB";
-            this.buttonUpLoadDB.Size = new System.Drawing.Size(90, 23);
-            this.buttonUpLoadDB.TabIndex = 8;
-            this.buttonUpLoadDB.Text = "Выгрузка БД";
-            this.buttonUpLoadDB.UseVisualStyleBackColor = true;
-            this.buttonUpLoadDB.Click += new System.EventHandler(this.buttonUpLoadDB_Click);
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonHelp.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonHelp.Location = new System.Drawing.Point(6, 179);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(89, 23);
-            this.buttonHelp.TabIndex = 7;
-            this.buttonHelp.Text = "Справка";
-            this.buttonHelp.UseVisualStyleBackColor = false;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
-            // 
-            // buttonPullFullList
-            // 
-            this.buttonPullFullList.Location = new System.Drawing.Point(6, 106);
-            this.buttonPullFullList.Name = "buttonPullFullList";
-            this.buttonPullFullList.Size = new System.Drawing.Size(89, 38);
-            this.buttonPullFullList.TabIndex = 6;
-            this.buttonPullFullList.Text = "Полный список";
-            this.buttonPullFullList.UseVisualStyleBackColor = true;
-            this.buttonPullFullList.Click += new System.EventHandler(this.buttonPullFullList_Click);
-            // 
-            // buttonFind
-            // 
-            this.buttonFind.Location = new System.Drawing.Point(6, 150);
-            this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(89, 23);
-            this.buttonFind.TabIndex = 5;
-            this.buttonFind.Text = "Поиск";
-            this.buttonFind.UseVisualStyleBackColor = true;
-            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
-            // 
-            // buttonDeleteVehicle
-            // 
-            this.buttonDeleteVehicle.Location = new System.Drawing.Point(6, 48);
-            this.buttonDeleteVehicle.Name = "buttonDeleteVehicle";
-            this.buttonDeleteVehicle.Size = new System.Drawing.Size(89, 23);
-            this.buttonDeleteVehicle.TabIndex = 4;
-            this.buttonDeleteVehicle.Text = "Удалить";
-            this.buttonDeleteVehicle.UseVisualStyleBackColor = true;
-            this.buttonDeleteVehicle.Click += new System.EventHandler(this.buttonDeleteVehicle_Click);
-            // 
-            // buttonRandVehicle
-            // 
-            this.buttonRandVehicle.Location = new System.Drawing.Point(6, 77);
-            this.buttonRandVehicle.Name = "buttonRandVehicle";
-            this.buttonRandVehicle.Size = new System.Drawing.Size(89, 23);
-            this.buttonRandVehicle.TabIndex = 3;
-            this.buttonRandVehicle.Text = "!__RND__!";
-            this.buttonRandVehicle.UseVisualStyleBackColor = true;
-            this.buttonRandVehicle.Click += new System.EventHandler(this.buttonRandVehicle_Click);
-            // 
-            // buttonAddVehicle
-            // 
-            this.buttonAddVehicle.Location = new System.Drawing.Point(6, 19);
-            this.buttonAddVehicle.Name = "buttonAddVehicle";
-            this.buttonAddVehicle.Size = new System.Drawing.Size(89, 23);
-            this.buttonAddVehicle.TabIndex = 2;
-            this.buttonAddVehicle.Text = "Добавить";
-            this.buttonAddVehicle.UseVisualStyleBackColor = true;
-            this.buttonAddVehicle.Click += new System.EventHandler(this.buttonAddVehicle_Click);
             // 
             // dataGridViewMain
             // 
@@ -168,7 +69,7 @@
             this.NameOfVehicle,
             this.WeightOfVehicle});
             this.dataGridViewMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridViewMain.Location = new System.Drawing.Point(101, 19);
+            this.dataGridViewMain.Location = new System.Drawing.Point(6, 23);
             this.dataGridViewMain.Name = "dataGridViewMain";
             this.dataGridViewMain.ReadOnly = true;
             this.dataGridViewMain.Size = new System.Drawing.Size(315, 252);
@@ -211,7 +112,7 @@
             this.toolStripButtonRandom});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(438, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(341, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -299,13 +200,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 438);
+            this.ClientSize = new System.Drawing.Size(341, 311);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBoxDataBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(400, 200);
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "ПО \"БензРасчёт\"";
             this.groupBoxDataBase.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -318,18 +222,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxDataBase;
-        private System.Windows.Forms.Button buttonAddVehicle;
-        private System.Windows.Forms.Button buttonRandVehicle;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeOfVehicle;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameOfVehicle;
         private System.Windows.Forms.DataGridViewTextBoxColumn WeightOfVehicle;
         public System.Windows.Forms.DataGridView dataGridViewMain;
-        private System.Windows.Forms.Button buttonDeleteVehicle;
-        private System.Windows.Forms.Button buttonFind;
-        private System.Windows.Forms.Button buttonPullFullList;
-        private System.Windows.Forms.Button buttonHelp;
-        private System.Windows.Forms.Button buttonDownLoadDB;
-        private System.Windows.Forms.Button buttonUpLoadDB;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonHelp;
         private System.Windows.Forms.ToolStripButton toolStripButtonExport;

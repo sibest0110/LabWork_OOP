@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindForm));
             this.checkBoxType = new System.Windows.Forms.CheckBox();
             this.checkBoxName = new System.Windows.Forms.CheckBox();
             this.checkBoxWeight = new System.Windows.Forms.CheckBox();
@@ -135,8 +136,11 @@
             this.Controls.Add(this.checkBoxName);
             this.Controls.Add(this.checkBoxType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(750, 200);
             this.MaximizeBox = false;
             this.Name = "FindForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Поиск";
             this.ResumeLayout(false);
             this.PerformLayout();

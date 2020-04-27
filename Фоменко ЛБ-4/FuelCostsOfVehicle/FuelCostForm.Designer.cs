@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuelCostForm));
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.textBoxDistance = new System.Windows.Forms.TextBox();
@@ -114,8 +115,11 @@
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonCalculate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(750, 200);
             this.MaximizeBox = false;
             this.Name = "FuelCostForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Расчёт затрат топлива";
             this.ResumeLayout(false);
             this.PerformLayout();

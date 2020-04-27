@@ -11,6 +11,9 @@ using Vehicles;
 
 namespace FuelCostsOfVehicle
 {
+    /// <summary>
+    /// Форма для поиска ТС
+    /// </summary>
     public partial class FindForm : Form
     {
         /// <summary>
@@ -141,7 +144,7 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Список ТС, удовлетворяющих условию по типу
         /// </summary>
-        /// <param name="type">Тип тс</param>
+        /// <param name="type">Тип ТС</param>
         /// <returns></returns>
         private List<VehiclesBase> FindVehiclesByType(string type)
         {
