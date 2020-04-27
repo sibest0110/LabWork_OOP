@@ -157,5 +157,91 @@ namespace FuelCostsOfVehicle
                     vehicle.Weight);
             }
         }
+
+        private void dataGridViewMain_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            GetFuelCost();
+        }
+
+        private void dataGridViewMain_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Чтобы не ломать при двойном клике колесом или ПКМ
+            dataGridViewMain.Rows
+                [dataGridViewMain.SelectedCells[0].RowIndex]
+                .Selected = true;
+        }
+
+        private void dataGridViewMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Чтобы не ломать при двойном клике колесом или ПКМ
+            dataGridViewMain.Rows
+                [dataGridViewMain.SelectedCells[0].RowIndex]
+                .Selected = true;
+
+            GetFuelCost();
+        }
+
+        /// <summary>
+        /// Расчёт расхода топлива по выделенной строке
+        /// </summary>
+        private void GetFuelCost()
+        {
+            //Проверка на выделение пустой строки
+            try
+            {
+                string typeCell = Convert.ToString(
+                    dataGridViewMain.SelectedRows[0].Cells[0].Value);
+                string nameCell = Convert.ToString(
+                    dataGridViewMain.SelectedRows[0].Cells[1].Value);
+                string weightCell = Convert.ToString(
+                    dataGridViewMain.SelectedRows[0].Cells[2].Value);
+
+                if (typeCell == "" && nameCell == "" && weightCell == "")
+                {
+                    return;
+                }
+            }
+            catch { }
+
+            MessageBox.Show($"Будем считать расход тут");
+
+            try
+            {
+                var fuelCostForm = new FuelCostForm(FindVehicleBySelectedRow());
+                fuelCostForm.Show();
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Поиск ТС по выделенной строке
+        /// </summary>
+        /// <returns></returns>
+        private VehiclesBase FindVehicleBySelectedRow()
+        {
+            foreach (var vehicle in _totalListOfVehicles)
+            {
+                if (Convert.ToString(vehicle.Type) == Convert.ToString(
+                    dataGridViewMain.SelectedRows[0].Cells[0].Value) &&
+                    Convert.ToString(vehicle.Name) == Convert.ToString(
+                        dataGridViewMain.SelectedRows[0].Cells[1].Value) &&
+                    Convert.ToString(vehicle.Weight) == Convert.ToString(
+                        dataGridViewMain.SelectedRows[0].Cells[2].Value))
+                {
+                    return vehicle;
+                }
+            }
+            throw new Exception(
+                    "Не найдено ТС. " +
+                    "Ошибка в базе данных, срочно закройте программу!");
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ReadingTXT.Read("readme\\help.txt"),
+                "Помощь",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Question);
+        }
     }
 }
