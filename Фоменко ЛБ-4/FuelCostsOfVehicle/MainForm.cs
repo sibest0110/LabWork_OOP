@@ -66,14 +66,14 @@ namespace FuelCostsOfVehicle
                     case 0:
                     {
                         string name =
-                            $"Автомобиль №{rand.Next(999)}";
+                            $"Авто №{rand.Next(999)}";
                         vehicle = new Car(name, weightCars);
                         break;
                     }
                     case 1:
                     {
                         string name =
-                            $"Гибридный автомобиль №{rand.Next(999)}";
+                            $"Гибрид №{rand.Next(999)}";
                         vehicle =
                             new HybridCar(name, weightCars);
                         break;
@@ -202,8 +202,6 @@ namespace FuelCostsOfVehicle
                 }
             }
             catch { }
-
-            MessageBox.Show($"Будем считать расход тут");
 
             try
             {
