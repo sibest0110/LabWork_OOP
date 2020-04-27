@@ -101,31 +101,61 @@ namespace FuelCostsOfVehicle
         {
             int counter = 0;
             var listToRemove = new List<VehiclesBase> { };
-
-            foreach (DataGridViewRow delRow in dataGridViewMain.SelectedRows)
+            try
             {
-                counter++;
-                dataGridViewMain.Rows.Remove(delRow);
-
-                foreach (VehiclesBase vehicle in _totalListOfVehicles)
+                foreach (DataGridViewRow delRow
+                    in dataGridViewMain.SelectedRows)
                 {
-                    if (Convert.ToString(vehicle.Type) == Convert.ToString(delRow.Cells[0].Value) &&
-                        Convert.ToString(vehicle.Name) == Convert.ToString(delRow.Cells[1].Value) &&
-                        Convert.ToString(vehicle.Weight) == Convert.ToString(delRow.Cells[2].Value))
+                    counter++;
+                    dataGridViewMain.Rows.Remove(delRow);
+
+                    foreach (VehiclesBase vehicle in _totalListOfVehicles)
                     {
-                        listToRemove.Add(vehicle);
+                        if (Convert.ToString(
+                            vehicle.Type) == Convert.ToString(
+                                            delRow.Cells[0].Value) &&
+                            Convert.ToString(
+                                vehicle.Name) == Convert.ToString(
+                                            delRow.Cells[1].Value) &&
+                            Convert.ToString(
+                                vehicle.Weight) == Convert.ToString(
+                                            delRow.Cells[2].Value))
+                        {
+                            listToRemove.Add(vehicle);
+                        }
                     }
                 }
-            }
-            foreach (var remVehicle in listToRemove)
-            {
-                _totalListOfVehicles.Remove(remVehicle);
-            }
+                foreach (var remVehicle in listToRemove)
+                {
+                    _totalListOfVehicles.Remove(remVehicle);
+                }
 
-            MessageBox.Show($"Удалено строк: {counter}",
-                "Удаление строк",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                MessageBox.Show($"Удалено строк: {counter}",
+                    "Удаление строк",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch { }
+        }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            FindForm findForm =
+                new FindForm(this, _totalListOfVehicles);
+
+            findForm.Show();
+        }
+
+        private void buttonPullFullList_Click(object sender, EventArgs e)
+        {
+            dataGridViewMain.Rows.Clear();
+            foreach (var vehicle in _totalListOfVehicles)
+            {
+                dataGridViewMain.Rows.Add(
+                    vehicle.Type,
+                    vehicle.Name,
+                    vehicle.Weight);
+            }
         }
     }
 }

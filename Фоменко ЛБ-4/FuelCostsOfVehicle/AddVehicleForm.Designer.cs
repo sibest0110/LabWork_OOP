@@ -101,6 +101,7 @@
             // 
             // comboBoxTypesOfVehicles
             // 
+            this.comboBoxTypesOfVehicles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypesOfVehicles.FormattingEnabled = true;
             this.comboBoxTypesOfVehicles.Items.AddRange(new object[] {
             "Car",
@@ -125,6 +126,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddVehicleForm";
             this.Text = "Добавление ТС";
             this.ResumeLayout(false);

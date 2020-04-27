@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonPullFullList = new System.Windows.Forms.Button();
+            this.buttonFind = new System.Windows.Forms.Button();
             this.buttonDeleteVehicle = new System.Windows.Forms.Button();
             this.buttonRandVehicle = new System.Windows.Forms.Button();
             this.buttonAddVehicle = new System.Windows.Forms.Button();
@@ -42,6 +44,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonPullFullList);
+            this.groupBox1.Controls.Add(this.buttonFind);
             this.groupBox1.Controls.Add(this.buttonDeleteVehicle);
             this.groupBox1.Controls.Add(this.buttonRandVehicle);
             this.groupBox1.Controls.Add(this.buttonAddVehicle);
@@ -53,6 +57,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // buttonPullFullList
+            // 
+            this.buttonPullFullList.Location = new System.Drawing.Point(6, 172);
+            this.buttonPullFullList.Name = "buttonPullFullList";
+            this.buttonPullFullList.Size = new System.Drawing.Size(75, 38);
+            this.buttonPullFullList.TabIndex = 6;
+            this.buttonPullFullList.Text = "Полный список";
+            this.buttonPullFullList.UseVisualStyleBackColor = true;
+            this.buttonPullFullList.Click += new System.EventHandler(this.buttonPullFullList_Click);
+            // 
+            // buttonFind
+            // 
+            this.buttonFind.Location = new System.Drawing.Point(6, 216);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(75, 23);
+            this.buttonFind.TabIndex = 5;
+            this.buttonFind.Text = "Поиск";
+            this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 
             // buttonDeleteVehicle
             // 
@@ -66,7 +90,7 @@
             // 
             // buttonRandVehicle
             // 
-            this.buttonRandVehicle.Location = new System.Drawing.Point(6, 125);
+            this.buttonRandVehicle.Location = new System.Drawing.Point(6, 115);
             this.buttonRandVehicle.Name = "buttonRandVehicle";
             this.buttonRandVehicle.Size = new System.Drawing.Size(75, 23);
             this.buttonRandVehicle.TabIndex = 3;
@@ -128,6 +152,7 @@
             this.ClientSize = new System.Drawing.Size(466, 340);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -146,6 +171,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WeightOfVehicle;
         public System.Windows.Forms.DataGridView dataGridViewMain;
         private System.Windows.Forms.Button buttonDeleteVehicle;
+        private System.Windows.Forms.Button buttonFind;
+        private System.Windows.Forms.Button buttonPullFullList;
     }
 }
 

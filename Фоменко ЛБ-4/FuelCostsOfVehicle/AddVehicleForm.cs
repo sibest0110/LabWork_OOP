@@ -24,10 +24,10 @@ namespace FuelCostsOfVehicle
 
         public AddVehicleForm(
             MainForm mainForm, List<VehiclesBase> totalVehicleList)
+            :this()
         {
             _totalVehicleList = totalVehicleList;
             _mainForm = mainForm;
-            InitializeComponent();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -46,7 +46,6 @@ namespace FuelCostsOfVehicle
                     textBoxNameVehicle.Text,
                     textBoxWeightVehicle.Text);
 
-                comboBoxTypesOfVehicles.Text = "-выбрать тип-";
                 textBoxNameVehicle.Text = "";
                 textBoxWeightVehicle.Text = "";
 
