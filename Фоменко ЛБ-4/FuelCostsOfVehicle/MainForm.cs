@@ -241,7 +241,10 @@ namespace FuelCostsOfVehicle
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
+                "Помощь",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Question);
         }
 
         private void buttonUpLoadDB_Click(object sender, EventArgs e)
@@ -287,10 +290,7 @@ namespace FuelCostsOfVehicle
 
         private void toolStripButtonHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
-                "Помощь",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Question);
+            
         }
     }
 }
