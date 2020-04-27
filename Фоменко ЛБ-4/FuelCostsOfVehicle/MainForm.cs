@@ -150,6 +150,14 @@ namespace FuelCostsOfVehicle
 
         private void buttonPullFullList_Click(object sender, EventArgs e)
         {
+            RefreshDataGrid();
+        }
+
+        /// <summary>
+        /// Обновляет содержимое DataGridView
+        /// </summary>
+        private void RefreshDataGrid()
+        {
             dataGridViewMain.Rows.Clear();
             foreach (var vehicle in _totalListOfVehicles)
             {
@@ -233,10 +241,7 @@ namespace FuelCostsOfVehicle
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
-                "Помощь",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Question);
+            
         }
 
         private void buttonUpLoadDB_Click(object sender, EventArgs e)
@@ -257,7 +262,7 @@ namespace FuelCostsOfVehicle
             // Удаление последней пустой строки
             exportList.RemoveAt(exportList.Count - 1);
 
-            if (exportList.Count==0)
+            if (exportList.Count == 0)
             {
                 MessageBox.Show("Невозможно выгрузить пустую базу данных",
                     "Выгрузка БД",
@@ -271,7 +276,21 @@ namespace FuelCostsOfVehicle
 
         private void buttonDownLoadDB_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _totalListOfVehicles = 
+                    ExternalInteraction.DownLoadDataBase();
+                RefreshDataGrid();
+            }
+            catch { }
+        }
 
+        private void toolStripButtonHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
+                "Помощь",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Question);
         }
     }
 }

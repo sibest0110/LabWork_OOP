@@ -88,15 +88,6 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +103,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="ico\arrowdown_flech_1539.ico" />
+    <Content Include="ico\arrowdown_flech_1539.png" />
+    <Content Include="ico\help_info_22527.ico" />
+    <Content Include="ico\help_info_22527.png" />
+    <Content Include="ico\uparrow_arriba_1538.ico" />
+    <Content Include="ico\uparrow_arriba_1538.png" />
     <Content Include="readme\help.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using Vehicles;
 
 namespace FuelCostsOfVehicle
 {
@@ -50,11 +51,72 @@ namespace FuelCostsOfVehicle
             }
         }
 
-
-        public static List<string> DownLoadDataBase()
+        /// <summary>
+        /// Импорт базы данных. В качестве возвращаемого значения - новый глобальный список ТС
+        /// </summary>
+        /// <returns></returns>
+        public static List<VehiclesBase> DownLoadDataBase()
         {
+            List<VehiclesBase> newTotalList = new List<VehiclesBase> { };
 
-            return null;
+            MessageBox.Show(
+                "Загрузка базы данных приведёт к потере текущей БД",
+                "Загрузка БД",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+
+            OpenFileDialog importDialog = new OpenFileDialog
+            {
+                Filter = "Секретный тип (*.fomenko)|*.fomenko",
+                RestoreDirectory = true
+            };
+
+            if (importDialog.ShowDialog() == DialogResult.OK)
+            {
+                string[] importMessage =
+                    File.ReadAllText(importDialog.FileName).Split('\r');
+
+                foreach (string importString in importMessage)
+                {
+                    if (importString == "")
+                    {
+                        continue;
+                    }
+
+                    string[] vehicleInfo =
+                        importString.Replace("\\|/", "`").Split('`');
+
+                    string name = vehicleInfo[1];
+                    double weight = Convert.ToDouble(vehicleInfo[2]);
+                    switch (vehicleInfo[0])
+                    {
+                        case "Car":
+                        {
+                            newTotalList.Add(new Car(name, weight));
+                            break;
+                        }
+                        case "HybridCar":
+                        {
+                            newTotalList.Add(new HybridCar(name, weight));
+                            break;
+                        }
+                        case "Helicopter":
+                        {
+                            newTotalList.Add(new Helicopter(name, weight));
+                            break;
+                        }
+                    }
+                }
+                MessageBox.Show(
+                "База данных успешно загружена",
+                "Импорт БД",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+                return newTotalList;
+            }
+            throw new Exception("Импорт БД прерван");
         }
     }
 }
