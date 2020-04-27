@@ -13,8 +13,14 @@ namespace FuelCostsOfVehicle
 {
     public partial class AddVehicleForm : Form
     {
+        /// <summary>
+        /// Полный список ТС
+        /// </summary>
         private List<VehiclesBase> _totalVehicleList;
 
+        /// <summary>
+        /// Главная форма
+        /// </summary>
         private MainForm _mainForm;
 
         public AddVehicleForm()
@@ -22,6 +28,11 @@ namespace FuelCostsOfVehicle
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Конструктор с сылкой на главную форму и полный список ТС
+        /// </summary>
+        /// <param name="mainForm">Главная форма</param>
+        /// <param name="totalVehicleList">Полный список ТС</param>
         public AddVehicleForm(
             MainForm mainForm, List<VehiclesBase> totalVehicleList)
             :this()
@@ -67,25 +78,17 @@ namespace FuelCostsOfVehicle
             }
             catch (Exception ex)
             {
-                if (textBoxWeightVehicle.Text == "")
-                {
-                    MessageBox.Show(
-                            "Не указана масса ТС!",
-                            "Масса транспортного средства",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show(
+                MessageBox.Show(
                             $"{ex.Message}",
-                            "ИСКЛЮЧЕНИИЕ!",
+                            "Внимание",
                             MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
+                            MessageBoxIcon.Exclamation);
             }
         }
 
+        /// <summary>
+        /// Добавить введённое ТС в глобальный список
+        /// </summary>
         private void AddCreatedVehicleInTotalList()
         {
             switch (comboBoxTypesOfVehicles.Text)
@@ -116,11 +119,6 @@ namespace FuelCostsOfVehicle
                 }
                 default:
                 {
-                    MessageBox.Show(
-                        "Не указан тип ТС!",
-                        "Тип транспортного средства",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
                     throw new Exception("Не указан тип ТС");
                 }
             }
