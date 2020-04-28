@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
+    [Serializable]
     /// <summary>
     /// Автомобиль с ДВС
     /// </summary>

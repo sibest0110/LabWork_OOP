@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
+    [Serializable]
     /// <summary>
     /// Гибридный автомобиль
     /// </summary>
@@ -39,7 +40,6 @@ namespace Vehicles
             Distance = distance;
             return Distance * (Weight / 30000);
         }
-
 
 
         /// <summary>
