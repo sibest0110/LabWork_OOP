@@ -26,3 +26,4 @@ C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\Console
 C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.exe
 C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.pdb
 C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.csprojAssemblyReference.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-3\ConsoleTests\obj\Debug\ConsoleTests.csproj.CoreCompileInputs.cache
