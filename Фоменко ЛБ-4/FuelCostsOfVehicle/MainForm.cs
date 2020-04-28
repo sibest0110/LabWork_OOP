@@ -21,7 +21,6 @@ namespace FuelCostsOfVehicle
         /// </summary>
         List<VehiclesBase> _totalListOfVehicles = new List<VehiclesBase> { };
 
-
         public MainForm()
         {
             InitializeComponent();
