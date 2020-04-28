@@ -42,7 +42,6 @@ namespace Vehicles
         }
 
 
-
         /// <summary>
         /// Издать звуки гибридной машины
         /// </summary>

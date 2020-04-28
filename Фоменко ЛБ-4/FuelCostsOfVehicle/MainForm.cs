@@ -33,7 +33,6 @@ namespace FuelCostsOfVehicle
 
         }
 
-
         /// <summary>
         /// Обновляет содержимое DataGridView
         /// </summary>
