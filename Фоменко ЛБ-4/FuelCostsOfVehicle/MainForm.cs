@@ -188,24 +188,21 @@ namespace FuelCostsOfVehicle
             findForm.Show();
         }
 
-        //TODO: ПЕРЕДЕЛАТЬ СОХРАНЕНИЕ!
         private void toolStripButtonExport_Click(object sender, EventArgs e)
         {
-            List<string> exportList = new List<string> { };
+            List<VehiclesBase> exportList = new List<VehiclesBase> { };
 
             foreach (DataGridViewRow row in dataGridViewMain.Rows)
             {
-                string exportString = "";
-
-                foreach (DataGridViewCell cell in row.Cells)
+                if (row.Cells["TypeOfVehicle"].Value != null)
                 {
-                    exportString += $"{cell.Value}\\|/";
+                    exportList.Add(
+                        AddVehicleForm.CreateVehicleByString(
+                        Convert.ToString(row.Cells["TypeOfVehicle"].Value),
+                        Convert.ToString(row.Cells["NameOfVehicle"].Value),
+                        Convert.ToString(row.Cells["WeightOfVehicle"].Value)));
                 }
-                exportList.Add(exportString);
             }
-
-            // Удаление последней пустой строки
-            exportList.RemoveAt(exportList.Count - 1);
 
             if (exportList.Count == 0)
             {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using Vehicles;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace FuelCostsOfVehicle
 {
@@ -25,7 +26,7 @@ namespace FuelCostsOfVehicle
         /// Выгрузка базы данных
         /// </summary>
         /// <param name="exportData">Выгружаемая база данных</param>
-        public static void UpLoadDataBase(List<string> exportData)
+        public static void UpLoadDataBase(List<VehiclesBase> exportData)
         {
             SaveFileDialog exportDialog = new SaveFileDialog
             {
@@ -35,19 +36,17 @@ namespace FuelCostsOfVehicle
 
             if (exportDialog.ShowDialog() == DialogResult.OK)
             {
-                string exportMessage = "";
+                BinaryFormatter formatter = new BinaryFormatter();
 
-                foreach (var exportString in exportData)
+                using (FileStream fs = new FileStream
+                    (exportDialog.FileName, FileMode.OpenOrCreate))
                 {
-                    exportMessage += $"{exportString}\r";
+                    formatter.Serialize(fs, exportData);
+                    MessageBox.Show("База данных успешно выгружена",
+                        "Выгрузка БД",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
-
-                File.WriteAllText(exportDialog.FileName, $"{exportMessage}\r");
-
-                MessageBox.Show("База данных успешно выгружена",
-                    "Выгрузка БД",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
             }
         }
 
@@ -57,14 +56,11 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         public static List<VehiclesBase> DownLoadDataBase()
         {
-            List<VehiclesBase> newTotalList = new List<VehiclesBase> { };
-
             MessageBox.Show(
                 "Загрузка базы данных приведёт к потере текущей БД",
                 "Загрузка БД",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-
 
             OpenFileDialog importDialog = new OpenFileDialog
             {
@@ -74,47 +70,22 @@ namespace FuelCostsOfVehicle
 
             if (importDialog.ShowDialog() == DialogResult.OK)
             {
-                string[] importMessage =
-                    File.ReadAllText(importDialog.FileName).Split('\r');
-
-                foreach (string importString in importMessage)
+                using (FileStream fs = new FileStream
+                    (importDialog.FileName, FileMode.OpenOrCreate))
                 {
-                    if (importString == "")
-                    {
-                        continue;
-                    }
+                    BinaryFormatter formatter = new BinaryFormatter();
 
-                    string[] vehicleInfo =
-                        importString.Replace("\\|/", "`").Split('`');
+                    List<VehiclesBase> newTotalList =
+                        (List<VehiclesBase>)formatter.Deserialize(fs);
 
-                    string name = vehicleInfo[1];
-                    double weight = Convert.ToDouble(vehicleInfo[2]);
-                    switch (vehicleInfo[0])
-                    {
-                        case "Car":
-                        {
-                            newTotalList.Add(new Car(name, weight));
-                            break;
-                        }
-                        case "HybridCar":
-                        {
-                            newTotalList.Add(new HybridCar(name, weight));
-                            break;
-                        }
-                        case "Helicopter":
-                        {
-                            newTotalList.Add(new Helicopter(name, weight));
-                            break;
-                        }
-                    }
+                    MessageBox.Show(
+                        "База данных успешно загружена",
+                        "Импорт БД",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    return newTotalList;
                 }
-                MessageBox.Show(
-                "База данных успешно загружена",
-                "Импорт БД",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-                return newTotalList;
             }
             throw new Exception("Импорт БД прерван");
         }

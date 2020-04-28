@@ -38,7 +38,7 @@ namespace FuelCostsOfVehicle
         /// <param name="totalVehicleList">Полный список ТС</param>
         public AddVehicleForm(
             MainForm mainForm, List<VehiclesBase> totalVehicleList)
-            :this()
+            : this()
         {
             _totalVehicleList = totalVehicleList;
             _mainForm = mainForm;
@@ -53,8 +53,12 @@ namespace FuelCostsOfVehicle
         {
             try
             {
-                AddCreatedVehicleInTotalList();
-                
+                _totalVehicleList.Add(
+                    CreateVehicleByString(
+                        comboBoxTypesOfVehicles.Text, 
+                        textBoxNameVehicle.Text, 
+                        textBoxWeightVehicle.Text));
+
                 _mainForm.dataGridViewMain.Rows.Add(
                     comboBoxTypesOfVehicles.Text,
                     textBoxNameVehicle.Text,
@@ -90,35 +94,30 @@ namespace FuelCostsOfVehicle
         }
 
         /// <summary>
-        /// Добавить введённое ТС в глобальный список
+        /// Создание ТС по строковым параметрам
         /// </summary>
-        private void AddCreatedVehicleInTotalList()
+        /// <param name="type">Тип ТС</param>
+        /// <param name="name">Название ТС</param>
+        /// <param name="weight">Масса ТС в кг</param>
+        /// <returns></returns>
+        public static VehiclesBase CreateVehicleByString(string type, string name, string weight)
         {
-            switch (comboBoxTypesOfVehicles.Text)
+            switch (type)
             {
                 case "Car":
                 {
-                    _totalVehicleList.Add(
-                        new Car(textBoxNameVehicle.Text,
-                        Convert.ToDouble(
-                            textBoxWeightVehicle.Text.Replace(".", ","))));
-                    break;
+                    return new Car(name, Convert.ToDouble(
+                            weight.Replace(".", ",")));
                 }
                 case "HybridCar":
                 {
-                    _totalVehicleList.Add(
-                        new HybridCar(textBoxNameVehicle.Text,
-                        Convert.ToDouble(
-                            textBoxWeightVehicle.Text.Replace(".", ","))));
-                    break;
+                    return new HybridCar(name, Convert.ToDouble(
+                            weight.Replace(".", ",")));
                 }
                 case "Helicopter":
                 {
-                    _totalVehicleList.Add(
-                        new Helicopter(textBoxNameVehicle.Text,
-                        Convert.ToDouble(
-                            textBoxWeightVehicle.Text.Replace(".", ","))));
-                    break;
+                    return new Helicopter(name, Convert.ToDouble(
+                            weight.Replace(".", ",")));
                 }
                 default:
                 {
