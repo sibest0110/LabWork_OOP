@@ -23,11 +23,14 @@ namespace Vehicles
             Type = VehiclesTypes.Helicopter;
             Name = name;
         }
-        //TODO: (v) XML
+
         /// <summary>
-        /// Конструктор по умолчанию. Присваивается только тип ТС.
+        /// Конструктор по-умолчанию Helicopter 
         /// </summary>
-        public Helicopter() => Type = VehiclesTypes.Helicopter;
+        public Helicopter()
+        {
+            Type = VehiclesTypes.Helicopter;
+        }
 
         /// <summary>
         /// Определение расхода топлива

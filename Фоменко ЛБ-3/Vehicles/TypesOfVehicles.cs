@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
-    //TODO: (v) XML
     /// <summary>
     /// Перечень типов ТС
     /// </summary>
@@ -20,14 +19,12 @@ namespace Vehicles
 
     public static class TypesOfVevicles
     {
-        //TODO: (v) Базовый класс ничего не должен знать о наследниках - этот метод стоит вынести
-        // Было в VehiclesBase
         /// <summary>
         /// Получение класса ТС по его типу
         /// </summary>
         /// <param name="enumType">Тип ТС по набору VehiclesTypes</param>
         /// <returns></returns>
-        public static Type GetClassByType(VehiclesTypes enumType)
+        public static Type GetClassByType(this VehiclesTypes enumType)
         {
             switch (enumType)
             {

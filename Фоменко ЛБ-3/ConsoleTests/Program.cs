@@ -9,20 +9,18 @@ using System.Reflection;
 
 namespace ConsoleTests
 {
-    //TODO: (v) RSDN
     public class Program
     {
-        //TODO: (v) RSDN
         public static void Main(string[] args)
         {
-            Welcome();
+            ShowWelcomeMessage();
             MenuStart();
         }
 
         /// <summary>
         /// Текст приветствия
         /// </summary>
-        private static void Welcome()
+        private static void ShowWelcomeMessage()
         {
             var lettersOfMessage = new List<Action>
             {
@@ -42,21 +40,7 @@ namespace ConsoleTests
                 new Action(()=> ColorOutput("т", ConsoleColor.Blue)),
                 new Action(()=> ColorOutput("ь!", ConsoleColor.Cyan))
             };
-
-            // Псевдокрасивый вывод приветствия
-            //for (int i = 0; i < lettersOfMessage.Count; i++)
-            //{
-            //    // Пустая позиция на месте предыдущих букв
-            //    for (int empty = 0; empty < i; empty++)
-            //    {
-            //        Write(" ");
-            //    }
-            //    lettersOfMessage[i].Invoke();
-
-            //    Thread.Sleep(50);
-
-            //    Clear();
-            //}
+            
             foreach (var action in lettersOfMessage)
             {
                 action.Invoke();
@@ -175,16 +159,13 @@ namespace ConsoleTests
                 typeof(Helicopter)
             };
 
-            //TODO: (v) RSDN
             ColorOutput($"\nПроверка Type каждого класса наследника:\n",
                 ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestVehiclesType);
 
-            //TODO: (v) RSDN
             ColorOutput($"\nПроверка ввода массы ТС и дистанции для ТС:\n",
                 ConsoleColor.Yellow);
             typesOfVehicles.ForEach(TestWeightAndDistance); 
-            
             
             ColorOutput($"\nПроверка ввода названия ТС:\n",
                 ConsoleColor.Yellow);
@@ -228,12 +209,10 @@ namespace ConsoleTests
                 typeOfClassVehicles.ToString().Split('.').Last();
 
 
-            //TODO: (v) Дубль ниже
             Write($"Свойство Type = {(defVehicle as VehiclesBase).Type} " +
                 $"(конструктор по умолчанию)");
             CheckVehicleType(nameOfClass, defVehicle as VehiclesBase);
             
-            //TODO: (v) Дубль выше
             Write($"Свойство Type = {(paramVehicle as VehiclesBase).Type} " +
                 $"(конструктор с параметрами)");
             CheckVehicleType(nameOfClass, paramVehicle as VehiclesBase);
@@ -258,8 +237,7 @@ namespace ConsoleTests
                 ColorOutput($"\t Fail\n", ConsoleColor.Red);
             }
         }
-
-
+        
         // Так как потом через оконное приложение вводить данные,
         // поэтому сразу работать с массой, как изначально строковым
         // значением
@@ -284,7 +262,6 @@ namespace ConsoleTests
         };
 
 
-        //TODO: (v) XML
         /// <summary>
         /// Тестирование ввода значений массы автомобиля и дистанции.
         /// </summary>
@@ -347,7 +324,6 @@ namespace ConsoleTests
                 {
                     ColorOutput($"\tFail Fail\n", ConsoleColor.Red);
                 }
-
             }
             WriteLine();
         }

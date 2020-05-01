@@ -13,3 +13,4 @@ C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\Vehicle
 C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\Vehicles\obj\Debug\Vehicles.dll
 C:\Users\alexe\source\repos\TPU\OOP_O5KM81\Fomenko\Фоменко ЛБ-3\Vehicles\obj\Debug\Vehicles.pdb
 D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-3\Vehicles\obj\Debug\Vehicles.csproj.CoreCompileInputs.cache
+D:\YandexDisk\ТПУ\Магистратура\4 Семестр\ООП\LabWorks\Фоменко ЛБ-3\Vehicles\obj\Debug\Vehicles.csprojAssemblyReference.cache
