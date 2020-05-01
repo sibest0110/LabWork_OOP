@@ -14,9 +14,6 @@ namespace Vehicles
     {
         private string _name = "empty name";
 
-        //TODO: (v) XML
-        //TODO: (v) Совсем без проверок?
-        // Согласен, не кошерно
         /// <summary>
         /// Название ТС
         /// </summary>
@@ -33,7 +30,11 @@ namespace Vehicles
         public VehiclesTypes Type { get; protected set; }
             = VehiclesTypes.Undefined;
 
+        /// <summary>
+        /// Масса ТС
+        /// </summary>
         private double _distance;
+
         /// <summary>
         /// Расстояние, которое необходимо преодолеть
         /// </summary>
@@ -44,7 +45,11 @@ namespace Vehicles
                 throw new NegativeValueExeption("Расстояние");
         }
 
+        /// <summary>
+        /// Масса ТС
+        /// </summary>
         private double _weight;
+
         /// <summary>
         /// Масса транспортного средства.
         /// </summary>

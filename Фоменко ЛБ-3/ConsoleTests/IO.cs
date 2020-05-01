@@ -23,16 +23,14 @@ namespace ConsoleTests
         {
             Console.WriteLine($"Выбранный тип ТС - {enumType}");
 
-            Type type = TypesOfVevicles.GetClassByType(enumType);
+            // TODO: !!!!
+            Type type = enumType.GetClassByType();
 
 
-            var vehicle = (Activator.CreateInstance(type) as VehiclesBase);
+            var vehicle = Activator.CreateInstance(type) as VehiclesBase;
 
             var settingsParams = new List<Action>
             {
-                //TODO (v) зачем кастить, если это итак vehicleBase?
-                // Забыл убрать после того, как сделал приведение к типу 
-                // VehiclesBase при объявлении "vehicle" (примерно 29 строка)
                 SetName(vehicle),
                 SetWeight(vehicle),
                 SetDistance(vehicle)
