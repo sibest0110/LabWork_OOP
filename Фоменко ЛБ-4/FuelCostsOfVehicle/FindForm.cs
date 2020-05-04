@@ -16,16 +16,16 @@ namespace FuelCostsOfVehicle
     /// </summary>
     public partial class FindForm : Form
     {
-        //TODO: RSDN
+        //TODO: (v) RSDN
         /// <summary>
         /// Полный список ТС
         /// </summary>
-        List<VehiclesBase> _totalVehicleList;
+        private List<VehiclesBase> _totalVehicleList;
 
         /// <summary>
         /// Список, содержащий результат поиска
         /// </summary>
-        List<VehiclesBase> _searchVehicleList;
+        private List<VehiclesBase> _searchVehicleList;
 
         //TODO: Отстой
         /// <summary>
