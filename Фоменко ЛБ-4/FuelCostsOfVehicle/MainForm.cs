@@ -127,9 +127,16 @@ namespace FuelCostsOfVehicle
         private void toolStripButtonAddVehicle_Click(object sender, EventArgs e)
         {
             var addVehicleForm =
-                new AddVehicleForm(this, _totalListOfVehicles);
+                new AddVehicleForm(_totalListOfVehicles);
 
             addVehicleForm.Show();
+
+            addVehicleForm.FormClosed += AddVehicleForm_FormClosed;
+        }
+
+        private void AddVehicleForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshDataGrid();
         }
 
         private void toolStripButtonRemoveVehicle_Click(object sender, EventArgs e)

@@ -22,10 +22,8 @@ namespace FuelCostsOfVehicle
         private List<VehiclesBase> _totalVehicleList;
 
         /// <summary>
-        /// Главная форма
+        /// Конструктор по умолчанию
         /// </summary>
-        private MainForm _mainForm;
-
         public AddVehicleForm()
         {
             InitializeComponent();
@@ -34,14 +32,11 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Конструктор с сылкой на главную форму и полный список ТС
         /// </summary>
-        /// <param name="mainForm">Главная форма</param>
         /// <param name="totalVehicleList">Полный список ТС</param>
-        public AddVehicleForm(
-            MainForm mainForm, List<VehiclesBase> totalVehicleList)
+        public AddVehicleForm(List<VehiclesBase> totalVehicleList)
             : this()
         {
             _totalVehicleList = totalVehicleList;
-            _mainForm = mainForm;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -58,11 +53,6 @@ namespace FuelCostsOfVehicle
                         comboBoxTypesOfVehicles.Text, 
                         textBoxNameVehicle.Text, 
                         textBoxWeightVehicle.Text));
-
-                _mainForm.dataGridViewMain.Rows.Add(
-                    comboBoxTypesOfVehicles.Text,
-                    textBoxNameVehicle.Text,
-                    textBoxWeightVehicle.Text);
 
                 textBoxNameVehicle.Text = "";
                 textBoxWeightVehicle.Text = "";
