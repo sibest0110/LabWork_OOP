@@ -29,6 +29,8 @@ namespace FuelCostsOfVehicle
             InitializeComponent();
         }
 
+        //TODO: (v) Отстой (Была ссылка на MainForm)
+
         /// <summary>
         /// Конструктор с сылкой на главную форму и полный список ТС
         /// </summary>
