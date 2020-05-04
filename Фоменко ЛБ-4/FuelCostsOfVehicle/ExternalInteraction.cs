@@ -12,11 +12,7 @@ namespace FuelCostsOfVehicle
 {
     //TODO: (v) XML
     /// <summary>
-<<<<<<< HEAD
     /// Класс для взаимодействия со внешними файлами
-=======
-    /// Клас для взаимодействия со внешними файлами
->>>>>>> ReplaceIcoLab4
     /// </summary>
     public static class ExternalInteraction
     {
