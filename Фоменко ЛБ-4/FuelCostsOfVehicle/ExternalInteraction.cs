@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace FuelCostsOfVehicle
 {
+    //TODO: XML
     public static class ExternalInteraction
     {
         /// <summary>

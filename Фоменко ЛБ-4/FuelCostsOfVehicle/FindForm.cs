@@ -16,6 +16,7 @@ namespace FuelCostsOfVehicle
     /// </summary>
     public partial class FindForm : Form
     {
+        //TODO: RSDN
         /// <summary>
         /// Полный список ТС
         /// </summary>
@@ -26,6 +27,7 @@ namespace FuelCostsOfVehicle
         /// </summary>
         List<VehiclesBase> _searchVehicleList;
 
+        //TODO: Отстой
         /// <summary>
         /// Главная форма
         /// </summary>
