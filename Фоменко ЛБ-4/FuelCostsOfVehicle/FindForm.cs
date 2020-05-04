@@ -25,7 +25,11 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Список, содержащий результат поиска
         /// </summary>
+<<<<<<< HEAD
         private List<VehiclesBase> _searchVehicleListGlobal;
+=======
+        private List<VehiclesBase> _searchVehicleList;
+>>>>>>> ReplaceIcoLab4
 
         /// <summary>
         /// Локальный список с результатами поиска
