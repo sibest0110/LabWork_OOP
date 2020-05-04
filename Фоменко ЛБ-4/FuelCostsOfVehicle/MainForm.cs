@@ -19,7 +19,16 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Список всех ТС в программе
         /// </summary>
-        List<VehiclesBase> _totalListOfVehicles = new List<VehiclesBase> { };
+        private List<VehiclesBase> _totalVehicleList 
+            = new List<VehiclesBase> { };
+
+        /// <summary>
+        /// Список ТС, полученный в результате поиска
+        /// При обращении к полю не клонируется глобальный список в данный список
+        /// </summary>
+        private List<VehiclesBase> _searchVehicleList = 
+            new List<VehiclesBase> { };
+
 
         public MainForm()
         {
@@ -30,16 +39,17 @@ namespace FuelCostsOfVehicle
 #else
             toolStripButtonRandom.Visible = false;
 #endif
-
+            
         }
 
         /// <summary>
-        /// Обновляет содержимое DataGridView
+        /// Обновляет содержимое DataGridViewMain содержимым vehicleList
         /// </summary>
-        private void RefreshDataGrid()
+        /// <param name="vehicleList">Источник данных для DataGridViewMain</param>
+        private void RefreshDataGrid(List<VehiclesBase> vehicleList)
         {
             dataGridViewMain.Rows.Clear();
-            foreach (var vehicle in _totalListOfVehicles)
+            foreach (var vehicle in vehicleList)
             {
                 dataGridViewMain.Rows.Add(
                     vehicle.Type,
@@ -47,6 +57,7 @@ namespace FuelCostsOfVehicle
                     vehicle.Weight);
             }
         }
+
 
         private void dataGridViewMain_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -98,7 +109,7 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         private VehiclesBase FindVehicleBySelectedRow()
         {
-            foreach (var vehicle in _totalListOfVehicles)
+            foreach (var vehicle in _totalVehicleList)
             {
                 if (Convert.ToString(vehicle.Type) == Convert.ToString(
                     dataGridViewMain.SelectedRows[0].Cells[0].Value) &&
@@ -127,7 +138,7 @@ namespace FuelCostsOfVehicle
         private void toolStripButtonAddVehicle_Click(object sender, EventArgs e)
         {
             var addVehicleForm =
-                new AddVehicleForm(_totalListOfVehicles);
+                new AddVehicleForm(_totalVehicleList);
 
             addVehicleForm.Show();
 
@@ -136,7 +147,7 @@ namespace FuelCostsOfVehicle
 
         private void AddVehicleForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            RefreshDataGrid();
+            RefreshDataGrid(_totalVehicleList);
         }
 
         private void toolStripButtonRemoveVehicle_Click(object sender, EventArgs e)
@@ -151,7 +162,7 @@ namespace FuelCostsOfVehicle
                     counter++;
                     dataGridViewMain.Rows.Remove(delRow);
 
-                    foreach (VehiclesBase vehicle in _totalListOfVehicles)
+                    foreach (VehiclesBase vehicle in _totalVehicleList)
                     {
                         if (Convert.ToString(
                             vehicle.Type) == Convert.ToString(
@@ -169,7 +180,7 @@ namespace FuelCostsOfVehicle
                 }
                 foreach (var remVehicle in listToRemove)
                 {
-                    _totalListOfVehicles.Remove(remVehicle);
+                    _totalVehicleList.Remove(remVehicle);
                 }
 
                 MessageBox.Show($"Удалено строк: {counter}",
@@ -182,15 +193,25 @@ namespace FuelCostsOfVehicle
 
         private void toolStripButtonUpdate_Click(object sender, EventArgs e)
         {
-            RefreshDataGrid();
+            RefreshDataGrid(_totalVehicleList);
         }
 
         private void toolStripButtonSearch_Click(object sender, EventArgs e)
         {
             FindForm findForm =
-                new FindForm(this, _totalListOfVehicles);
+                new FindForm(_totalVehicleList, _searchVehicleList);
 
             findForm.Show();
+            findForm.FormClosed += FindForm_FormClosed;
+        }
+
+        private void FindForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshDataGrid(_searchVehicleList);
+            if (dataGridViewMain.Rows.Count==1)
+            {
+                RefreshDataGrid(_totalVehicleList);
+            }
         }
 
         private void toolStripButtonExport_Click(object sender, EventArgs e)
@@ -225,9 +246,9 @@ namespace FuelCostsOfVehicle
         {
             try
             {
-                _totalListOfVehicles =
+                _totalVehicleList =
                     ExternalInteraction.DownLoadDataBase();
-                RefreshDataGrid();
+                RefreshDataGrid(_totalVehicleList);
             }
             catch { }
         }
@@ -271,7 +292,7 @@ namespace FuelCostsOfVehicle
                         break;
                     }
                 }
-                _totalListOfVehicles.Add(vehicle);
+                _totalVehicleList.Add(vehicle);
                 dataGridViewMain.Rows.Add
                     (vehicle.Type, vehicle.Name, vehicle.Weight);
             }
@@ -281,5 +302,6 @@ namespace FuelCostsOfVehicle
             }
         }
 
+        
     }
 }

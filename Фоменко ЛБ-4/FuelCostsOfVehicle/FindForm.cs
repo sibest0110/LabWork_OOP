@@ -25,14 +25,18 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Список, содержащий результат поиска
         /// </summary>
-        private List<VehiclesBase> _searchVehicleList;
+        private List<VehiclesBase> _searchVehicleListGlobal;
 
-        //TODO: Отстой
         /// <summary>
-        /// Главная форма
+        /// Локальный список с результатами поиска
         /// </summary>
-        MainForm _mainForm;
+        private List<VehiclesBase> _searchVehicleListLocal;
 
+        //TODO: (v) Отстой (Была ссылка на MainForm)
+
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public FindForm()
         {
             InitializeComponent();
@@ -43,31 +47,20 @@ namespace FuelCostsOfVehicle
         /// </summary>
         /// <param name="mainForm">Главная форма</param>
         /// <param name="totalVehicleList">Полный список ТС</param>
-        public FindForm(MainForm mainForm,
-            List<VehiclesBase> totalVehicleList)
+        public FindForm(List<VehiclesBase> totalVehicleList,
+            List<VehiclesBase> searchVehicleList)
             : this()
         {
             _totalVehicleList = totalVehicleList;
-            _searchVehicleList = CloneVehicleList(_totalVehicleList);
-            _mainForm = mainForm;
+
+            _searchVehicleListGlobal = searchVehicleList;
+            _searchVehicleListGlobal.Clear();
+
+            _searchVehicleListLocal = 
+                Program.CloneVehicleList(_totalVehicleList);
         }
 
-        /// <summary>
-        /// Клонирование списка ТС
-        /// </summary>
-        /// <param name="original">Исходный список</param>
-        /// <returns></returns>
-        private List<VehiclesBase> CloneVehicleList(List<VehiclesBase> original)
-        {
-            List<VehiclesBase> clone = new List<VehiclesBase> { };
-
-            foreach (var vehicle in original)
-            {
-                clone.Add(vehicle);
-            }
-
-            return clone;
-        }
+        
 
         private void checkBoxType_CheckedChanged(object sender, EventArgs e)
         {
@@ -112,31 +105,26 @@ namespace FuelCostsOfVehicle
 
         private void buttonFind_Click(object sender, EventArgs e)
         {
-
             if (checkBoxType.Checked)
             {
-                _searchVehicleList = FindVehiclesByType(comboBoxType.Text);
+                _searchVehicleListLocal = FindVehiclesByType(comboBoxType.Text);
             }
             if (checkBoxName.Checked)
             {
-                _searchVehicleList = FindVehiclesByName(textBoxName.Text);
+                _searchVehicleListLocal = FindVehiclesByName(textBoxName.Text);
             }
             if (checkBoxWeight.Checked)
             {
-                _searchVehicleList = FindVehiclesByWeight(
+                _searchVehicleListLocal = FindVehiclesByWeight(
                     Convert.ToDouble(textBoxWeight.Text.Replace(".", ",")));
             }
 
-            _mainForm.dataGridViewMain.Rows.Clear();
-            foreach (var vehicle in _searchVehicleList)
-            {
-                _mainForm.dataGridViewMain.Rows.Add(
-                    vehicle.Type,
-                    vehicle.Name,
-                    vehicle.Weight);
-            }
+
+            _searchVehicleListLocal.ForEach(_searchVehicleListGlobal.Add);
+
+
             MessageBox.Show(
-                $"Найдено транспортных средств: {_searchVehicleList.Count}",
+                $"Найдено транспортных средств: {_searchVehicleListGlobal.Count}",
                 "Результат поиска",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
@@ -150,8 +138,8 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         private List<VehiclesBase> FindVehiclesByType(string type)
         {
-            var findingList = CloneVehicleList(_searchVehicleList);
-            foreach (var vehicle in _searchVehicleList)
+            var findingList = Program.CloneVehicleList(_searchVehicleListLocal);
+            foreach (var vehicle in _searchVehicleListLocal)
             {
                 if (Convert.ToString(vehicle.Type) != type)
                 {
@@ -168,8 +156,8 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         private List<VehiclesBase> FindVehiclesByName(string name)
         {
-            var findingList = CloneVehicleList(_searchVehicleList);
-            foreach (var vehicle in _searchVehicleList)
+            var findingList = Program.CloneVehicleList(_searchVehicleListLocal);
+            foreach (var vehicle in _searchVehicleListLocal)
             {
                 if (vehicle.Name != name)
                 {
@@ -186,8 +174,8 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         private List<VehiclesBase> FindVehiclesByWeight(double weight)
         {
-            var findingList = CloneVehicleList(_searchVehicleList);
-            foreach (var vehicle in _searchVehicleList)
+            var findingList = Program.CloneVehicleList(_searchVehicleListLocal);
+            foreach (var vehicle in _searchVehicleListLocal)
             {
                 if (vehicle.Weight != weight)
                 {
@@ -196,5 +184,6 @@ namespace FuelCostsOfVehicle
             }
             return findingList;
         }
+
     }
 }

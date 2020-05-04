@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vehicles;
 
 namespace FuelCostsOfVehicle
 {
@@ -17,6 +18,23 @@ namespace FuelCostsOfVehicle
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+        }
+
+        /// <summary>
+        /// Клонирование списка ТС
+        /// </summary>
+        /// <param name="original">Исходный список</param>
+        /// <returns></returns>
+        public static List<VehiclesBase> CloneVehicleList(List<VehiclesBase> original)
+        {
+            List<VehiclesBase> clone = new List<VehiclesBase> { };
+
+            foreach (var vehicle in original)
+            {
+                clone.Add(vehicle);
+            }
+
+            return clone;
         }
     }
 }
