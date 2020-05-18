@@ -16,7 +16,6 @@ namespace FuelCostsOfVehicle
     /// </summary>
     public partial class FindForm : Form
     {
-        //TODO: (v) RSDN
         /// <summary>
         /// Полный список ТС
         /// </summary>
@@ -32,7 +31,13 @@ namespace FuelCostsOfVehicle
         /// </summary>
         private List<VehiclesBase> _searchVehicleListLocal;
 
-        //TODO: (v) Отстой (Была ссылка на MainForm)
+        /// <summary>
+        /// Словарь соответствий checkbox и поля задания соответствующего
+        /// параметра ТС (Заполняется в конструкторе по-умолчанию).
+        /// </summary>
+        private Dictionary<CheckBox, Control> _controlsDictionary
+            = new Dictionary<CheckBox, Control>() { };
+
 
         /// <summary>
         /// Конструктор по умолчанию
@@ -40,6 +45,14 @@ namespace FuelCostsOfVehicle
         public FindForm()
         {
             InitializeComponent();
+
+
+            _controlsDictionary = new Dictionary<CheckBox, Control> 
+            {
+                { checkBoxType, comboBoxType },
+                { checkBoxName, textBoxName },
+                { checkBoxWeight, textBoxWeight }
+            };
         }
 
         /// <summary>
@@ -56,54 +69,50 @@ namespace FuelCostsOfVehicle
             _searchVehicleListGlobal = searchVehicleList;
             _searchVehicleListGlobal.Clear();
 
-            _searchVehicleListLocal = 
+            _searchVehicleListLocal =
                 Program.CloneVehicleList(_totalVehicleList);
         }
 
-        
 
-        private void checkBoxType_CheckedChanged(object sender, EventArgs e)
+        //TODO: (v) Применение "_controlsDictionary"
+
+        //TODO: (v) RSDN
+        private void CheckBoxType_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxType.Checked)
-            {
-                comboBoxType.Enabled = true;
-            }
-            else
-            {
-                comboBoxType.Enabled = false;
-            }
+            SwitchConditionByCheckBox(sender);
         }
 
-        private void checkBoxName_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxName_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxName.Checked)
-            {
-                textBoxName.Enabled = true;
-            }
-            else
-            {
-                textBoxName.Enabled = false;
-            }
+            SwitchConditionByCheckBox(sender);
         }
 
-        private void checkBoxWeight_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxWeight_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxWeight.Checked)
-            {
-                textBoxWeight.Enabled = true;
-            }
-            else
-            {
-                textBoxWeight.Enabled = false;
-            }
+            SwitchConditionByCheckBox(sender);
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Изменения состояния возможности ввода параметра ТС 
+        /// в зависимости от состояния соответствующего CheckBox.
+        /// </summary>
+        /// <param name="sender">CheckBox, отвечающий за доступ к вводу параметра ТС</param>
+        private void SwitchConditionByCheckBox(object sender)
+        {
+            var localCheckBox = (CheckBox)sender;
+
+            _controlsDictionary[localCheckBox].Enabled
+                = localCheckBox.Checked;
+        }
+
+        //TODO: (v) RSDN
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonFind_Click(object sender, EventArgs e)
+        //TODO: (v) RSDN
+        private void ButtonFind_Click(object sender, EventArgs e)
         {
             if (checkBoxType.Checked)
             {
@@ -184,6 +193,5 @@ namespace FuelCostsOfVehicle
             }
             return findingList;
         }
-
     }
 }

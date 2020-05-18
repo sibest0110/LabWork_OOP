@@ -47,7 +47,7 @@
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // buttonCancel
             // 
@@ -57,7 +57,7 @@
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // labelWeightVehicle
             // 
@@ -104,10 +104,6 @@
             // 
             this.comboBoxTypesOfVehicles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypesOfVehicles.FormattingEnabled = true;
-            this.comboBoxTypesOfVehicles.Items.AddRange(new object[] {
-            "Car",
-            "HybridCar",
-            "Helicopter"});
             this.comboBoxTypesOfVehicles.Location = new System.Drawing.Point(27, 38);
             this.comboBoxTypesOfVehicles.Name = "comboBoxTypesOfVehicles";
             this.comboBoxTypesOfVehicles.Size = new System.Drawing.Size(91, 21);

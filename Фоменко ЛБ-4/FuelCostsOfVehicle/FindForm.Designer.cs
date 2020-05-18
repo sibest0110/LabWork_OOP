@@ -48,7 +48,7 @@
             this.checkBoxType.TabIndex = 0;
             this.checkBoxType.Text = "Тип";
             this.checkBoxType.UseVisualStyleBackColor = true;
-            this.checkBoxType.CheckedChanged += new System.EventHandler(this.checkBoxType_CheckedChanged);
+            this.checkBoxType.CheckedChanged += new System.EventHandler(this.CheckBoxType_CheckedChanged);
             // 
             // checkBoxName
             // 
@@ -59,7 +59,7 @@
             this.checkBoxName.TabIndex = 1;
             this.checkBoxName.Text = "Название";
             this.checkBoxName.UseVisualStyleBackColor = true;
-            this.checkBoxName.CheckedChanged += new System.EventHandler(this.checkBoxName_CheckedChanged);
+            this.checkBoxName.CheckedChanged += new System.EventHandler(this.CheckBoxName_CheckedChanged);
             // 
             // checkBoxWeight
             // 
@@ -70,7 +70,7 @@
             this.checkBoxWeight.TabIndex = 2;
             this.checkBoxWeight.Text = "Масса, кг";
             this.checkBoxWeight.UseVisualStyleBackColor = true;
-            this.checkBoxWeight.CheckedChanged += new System.EventHandler(this.checkBoxWeight_CheckedChanged);
+            this.checkBoxWeight.CheckedChanged += new System.EventHandler(this.CheckBoxWeight_CheckedChanged);
             // 
             // textBoxName
             // 
@@ -96,7 +96,7 @@
             this.buttonFind.TabIndex = 6;
             this.buttonFind.Text = "Поиск";
             this.buttonFind.UseVisualStyleBackColor = true;
-            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            this.buttonFind.Click += new System.EventHandler(this.ButtonFind_Click);
             // 
             // buttonCancel
             // 
@@ -106,7 +106,7 @@
             this.buttonCancel.TabIndex = 7;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // comboBoxType
             // 

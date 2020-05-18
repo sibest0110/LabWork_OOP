@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicles;
+using System.Reflection;
 
 namespace FuelCostsOfVehicle
 {
@@ -21,15 +22,34 @@ namespace FuelCostsOfVehicle
         /// </summary>
         private List<VehiclesBase> _totalVehicleList;
 
+        //TODO: (V) глобальный словарь ТС
+        /// <summary>
+        /// Тип ТС и название типа
+        /// </summary>
+        private Dictionary<Type, string> _vehicleTypesAndStrings;
+
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
         public AddVehicleForm()
         {
             InitializeComponent();
-        }
 
-        //TODO: (v) Отстой (Была ссылка на MainForm)
+
+            //TODO: (v) Единое место формирования Комбобокса
+
+            _vehicleTypesAndStrings = new Dictionary<Type, string>
+            {
+                {typeof(Car), nameof(Car)},
+                {typeof(HybridCar), nameof(HybridCar)},
+                {typeof(Helicopter), nameof(Helicopter)},
+            };
+
+            foreach (var type in _vehicleTypesAndStrings)
+            {
+                comboBoxTypesOfVehicles.Items.Add(type.Value);
+            }
+        }
 
         /// <summary>
         /// Конструктор с сылкой на главную форму и полный список ТС
@@ -41,19 +61,19 @@ namespace FuelCostsOfVehicle
             _totalVehicleList = totalVehicleList;
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonOK_Click(object sender, EventArgs e)
+        private void ButtonOK_Click(object sender, EventArgs e)
         {
             try
             {
                 _totalVehicleList.Add(
                     CreateVehicleByString(
-                        comboBoxTypesOfVehicles.Text, 
-                        textBoxNameVehicle.Text, 
+                        comboBoxTypesOfVehicles.Text,
+                        textBoxNameVehicle.Text,
                         textBoxWeightVehicle.Text));
 
                 textBoxNameVehicle.Text = "";
@@ -94,28 +114,40 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         public static VehiclesBase CreateVehicleByString(string type, string name, string weight)
         {
+            //TODO: (v) Со стрингами разобрался
+
+            Type typeClass;
             switch (type)
             {
-                case "Car":
+                case nameof(Car):
                 {
-                    return new Car(name, Convert.ToDouble(
-                            weight.Replace(".", ",")));
+                    typeClass = typeof(Car);
+                    break;
                 }
-                case "HybridCar":
+                case nameof(HybridCar):
                 {
-                    return new HybridCar(name, Convert.ToDouble(
-                            weight.Replace(".", ",")));
+                    typeClass = typeof(HybridCar);
+                    break;
                 }
-                case "Helicopter":
+                case nameof(Helicopter):
                 {
-                    return new Helicopter(name, Convert.ToDouble(
-                            weight.Replace(".", ",")));
+                    typeClass = typeof(Helicopter);
+                    break;
                 }
                 default:
                 {
                     throw new Exception("Не указан тип ТС");
                 }
             }
+
+            //получаем конструктор
+            ConstructorInfo paramCons = typeClass.GetConstructor(
+                new Type[] { typeof(string), typeof(double) });
+
+
+            //вызываем конструтор
+            return (VehiclesBase)paramCons.Invoke(
+                new object[] { name, Convert.ToDouble(weight) });
         }
     }
 }

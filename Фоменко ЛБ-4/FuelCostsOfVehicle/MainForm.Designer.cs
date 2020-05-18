@@ -74,8 +74,8 @@
             this.dataGridViewMain.ReadOnly = true;
             this.dataGridViewMain.Size = new System.Drawing.Size(315, 252);
             this.dataGridViewMain.TabIndex = 1;
-            this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellClick);
-            this.dataGridViewMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellDoubleClick);
+            this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMain_CellClick);
+            this.dataGridViewMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMain_CellDoubleClick);
             // 
             // TypeOfVehicle
             // 
@@ -124,7 +124,7 @@
             this.toolStripButtonHelp.Name = "toolStripButtonHelp";
             this.toolStripButtonHelp.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonHelp.Text = "Справка";
-            this.toolStripButtonHelp.Click += new System.EventHandler(this.toolStripButtonHelp_Click);
+            this.toolStripButtonHelp.Click += new System.EventHandler(this.ToolStripButtonHelp_Click);
             // 
             // toolStripButtonAddVehicle
             // 
@@ -134,7 +134,7 @@
             this.toolStripButtonAddVehicle.Name = "toolStripButtonAddVehicle";
             this.toolStripButtonAddVehicle.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonAddVehicle.Text = "Добавить ТС";
-            this.toolStripButtonAddVehicle.Click += new System.EventHandler(this.toolStripButtonAddVehicle_Click);
+            this.toolStripButtonAddVehicle.Click += new System.EventHandler(this.ToolStripButtonAddVehicle_Click);
             // 
             // toolStripButtonRemoveVehicle
             // 
@@ -144,7 +144,7 @@
             this.toolStripButtonRemoveVehicle.Name = "toolStripButtonRemoveVehicle";
             this.toolStripButtonRemoveVehicle.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonRemoveVehicle.Text = "Удалить выделенное ТС";
-            this.toolStripButtonRemoveVehicle.Click += new System.EventHandler(this.toolStripButtonRemoveVehicle_Click);
+            this.toolStripButtonRemoveVehicle.Click += new System.EventHandler(this.ToolStripButtonRemoveVehicle_Click);
             // 
             // toolStripButtonUpdate
             // 
@@ -154,7 +154,7 @@
             this.toolStripButtonUpdate.Name = "toolStripButtonUpdate";
             this.toolStripButtonUpdate.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonUpdate.Text = "Обновить список";
-            this.toolStripButtonUpdate.Click += new System.EventHandler(this.toolStripButtonUpdate_Click);
+            this.toolStripButtonUpdate.Click += new System.EventHandler(this.ToolStripButtonUpdate_Click);
             // 
             // toolStripButtonSearch
             // 
@@ -164,7 +164,7 @@
             this.toolStripButtonSearch.Name = "toolStripButtonSearch";
             this.toolStripButtonSearch.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSearch.Text = "Поиск ТС";
-            this.toolStripButtonSearch.Click += new System.EventHandler(this.toolStripButtonSearch_Click);
+            this.toolStripButtonSearch.Click += new System.EventHandler(this.ToolStripButtonSearch_Click);
             // 
             // toolStripButtonExport
             // 
@@ -174,7 +174,7 @@
             this.toolStripButtonExport.Name = "toolStripButtonExport";
             this.toolStripButtonExport.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonExport.Text = "Выгрузка базы данных во внешний файл";
-            this.toolStripButtonExport.Click += new System.EventHandler(this.toolStripButtonExport_Click);
+            this.toolStripButtonExport.Click += new System.EventHandler(this.ToolStripButtonExport_Click);
             // 
             // toolStripButtonImport
             // 
@@ -184,7 +184,7 @@
             this.toolStripButtonImport.Name = "toolStripButtonImport";
             this.toolStripButtonImport.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonImport.Text = "Загрузка базы данных из внешнего файла";
-            this.toolStripButtonImport.Click += new System.EventHandler(this.toolStripButtonImport_Click);
+            this.toolStripButtonImport.Click += new System.EventHandler(this.ToolStripButtonImport_Click);
             // 
             // toolStripButtonRandom
             // 
@@ -194,7 +194,7 @@
             this.toolStripButtonRandom.Name = "toolStripButtonRandom";
             this.toolStripButtonRandom.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonRandom.Text = "Генерация случайного ТС";
-            this.toolStripButtonRandom.Click += new System.EventHandler(this.toolStripButtonRandom_Click);
+            this.toolStripButtonRandom.Click += new System.EventHandler(this.ToolStripButtonRandom_Click);
             // 
             // MainForm
             // 

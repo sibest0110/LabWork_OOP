@@ -19,14 +19,14 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Список всех ТС в программе
         /// </summary>
-        private List<VehiclesBase> _totalVehicleList 
+        private List<VehiclesBase> _totalVehicleList
             = new List<VehiclesBase> { };
 
         /// <summary>
         /// Список ТС, полученный в результате поиска
         /// При обращении к полю не клонируется глобальный список в данный список
         /// </summary>
-        private List<VehiclesBase> _searchVehicleList = 
+        private List<VehiclesBase> _searchVehicleList =
             new List<VehiclesBase> { };
 
 
@@ -39,7 +39,7 @@ namespace FuelCostsOfVehicle
 #else
             toolStripButtonRandom.Visible = false;
 #endif
-            
+
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace FuelCostsOfVehicle
         }
 
 
-        private void dataGridViewMain_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewMain_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Чтобы не ломать при двойном клике колесом или ПКМ
             dataGridViewMain.Rows
@@ -67,12 +67,9 @@ namespace FuelCostsOfVehicle
                 .Selected = true;
         }
 
-        private void dataGridViewMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Чтобы не ломать при двойном клике колесом или ПКМ
-            dataGridViewMain.Rows
-                [dataGridViewMain.SelectedCells[0].RowIndex]
-                .Selected = true;
+            DataGridViewMain_CellClick(sender, e);
 
             GetFuelCost();
         }
@@ -82,25 +79,22 @@ namespace FuelCostsOfVehicle
         /// </summary>
         private void GetFuelCost()
         {
+            string typeCell = Convert.ToString(
+                dataGridViewMain.SelectedRows[0].Cells[0].Value);
+            string nameCell = Convert.ToString(
+                dataGridViewMain.SelectedRows[0].Cells[1].Value);
+            string weightCell = Convert.ToString(
+                dataGridViewMain.SelectedRows[0].Cells[2].Value);
+
             //Проверка на выделение пустой строки
-            try
+            if (typeCell == "" && nameCell == "" && weightCell == "")
             {
-                string typeCell = Convert.ToString(
-                    dataGridViewMain.SelectedRows[0].Cells[0].Value);
-                string nameCell = Convert.ToString(
-                    dataGridViewMain.SelectedRows[0].Cells[1].Value);
-                string weightCell = Convert.ToString(
-                    dataGridViewMain.SelectedRows[0].Cells[2].Value);
-
-                if (typeCell == "" && nameCell == "" && weightCell == "")
-                {
-                    return;
-                }
-
-                var fuelCostForm = new FuelCostForm(FindVehicleBySelectedRow());
-                fuelCostForm.Show();
+                return;
             }
-            catch { }
+
+            var fuelCostForm = new FuelCostForm(FindVehicleBySelectedRow());
+            fuelCostForm.Show();
+            //TODO: (v) wat? (был ненужный try catch)
         }
 
         /// <summary>
@@ -127,7 +121,7 @@ namespace FuelCostsOfVehicle
         }
 
 
-        private void toolStripButtonHelp_Click(object sender, EventArgs e)
+        private void ToolStripButtonHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
                 "Помощь",
@@ -135,7 +129,7 @@ namespace FuelCostsOfVehicle
                 MessageBoxIcon.Question);
         }
 
-        private void toolStripButtonAddVehicle_Click(object sender, EventArgs e)
+        private void ToolStripButtonAddVehicle_Click(object sender, EventArgs e)
         {
             var addVehicleForm =
                 new AddVehicleForm(_totalVehicleList);
@@ -150,7 +144,7 @@ namespace FuelCostsOfVehicle
             RefreshDataGrid(_totalVehicleList);
         }
 
-        private void toolStripButtonRemoveVehicle_Click(object sender, EventArgs e)
+        private void ToolStripButtonRemoveVehicle_Click(object sender, EventArgs e)
         {
             int counter = 0;
             var listToRemove = new List<VehiclesBase> { };
@@ -191,12 +185,12 @@ namespace FuelCostsOfVehicle
             catch { }
         }
 
-        private void toolStripButtonUpdate_Click(object sender, EventArgs e)
+        private void ToolStripButtonUpdate_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(_totalVehicleList);
         }
 
-        private void toolStripButtonSearch_Click(object sender, EventArgs e)
+        private void ToolStripButtonSearch_Click(object sender, EventArgs e)
         {
             FindForm findForm =
                 new FindForm(_totalVehicleList, _searchVehicleList);
@@ -208,13 +202,13 @@ namespace FuelCostsOfVehicle
         private void FindForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             RefreshDataGrid(_searchVehicleList);
-            if (dataGridViewMain.Rows.Count==1)
+            if (dataGridViewMain.Rows.Count == 1)
             {
                 RefreshDataGrid(_totalVehicleList);
             }
         }
 
-        private void toolStripButtonExport_Click(object sender, EventArgs e)
+        private void ToolStripButtonExport_Click(object sender, EventArgs e)
         {
             List<VehiclesBase> exportList = new List<VehiclesBase> { };
 
@@ -242,7 +236,7 @@ namespace FuelCostsOfVehicle
             ExternalInteraction.UpLoadDataBase(exportList);
         }
 
-        private void toolStripButtonImport_Click(object sender, EventArgs e)
+        private void ToolStripButtonImport_Click(object sender, EventArgs e)
         {
             try
             {
@@ -250,10 +244,18 @@ namespace FuelCostsOfVehicle
                     ExternalInteraction.DownLoadDataBase();
                 RefreshDataGrid(_totalVehicleList);
             }
-            catch { }
+            //TODO: (v) wat? (был пустой catch)
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Импорт БД",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
-        private void toolStripButtonRandom_Click(object sender, EventArgs e)
+        private void ToolStripButtonRandom_Click(object sender, EventArgs e)
         {
             try
             {
@@ -302,6 +304,6 @@ namespace FuelCostsOfVehicle
             }
         }
 
-        
+
     }
 }
