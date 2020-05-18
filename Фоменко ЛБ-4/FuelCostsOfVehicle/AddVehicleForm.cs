@@ -26,7 +26,13 @@ namespace FuelCostsOfVehicle
         /// <summary>
         /// Тип ТС и название типа
         /// </summary>
-        private Dictionary<Type, string> _vehicleTypesAndStrings;
+        private static Dictionary<Type, string> _vehicleTypesAndStrings =
+            new Dictionary<Type, string>
+            {
+                {typeof(Car), nameof(Car)},
+                {typeof(HybridCar), nameof(HybridCar)},
+                {typeof(Helicopter), nameof(Helicopter)},
+            };
 
         /// <summary>
         /// Конструктор по умолчанию
@@ -36,14 +42,6 @@ namespace FuelCostsOfVehicle
             InitializeComponent();
 
 
-            //TODO: (v) Единое место формирования Комбобокса
-
-            _vehicleTypesAndStrings = new Dictionary<Type, string>
-            {
-                {typeof(Car), nameof(Car)},
-                {typeof(HybridCar), nameof(HybridCar)},
-                {typeof(Helicopter), nameof(Helicopter)},
-            };
 
             foreach (var type in _vehicleTypesAndStrings)
             {
@@ -114,31 +112,53 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         public static VehiclesBase CreateVehicleByString(string type, string name, string weight)
         {
+            Type typeClass = null;
+
             //TODO: (v) Со стрингами разобрался
 
-            Type typeClass;
-            switch (type)
+            #region ВАРИАНТ 1 (Мне больше нравится)
+
+            // Так как у нас список _vehicleTypesAndStrings формируется
+            // в одном месте и тут мы ссылаемся на это же место,
+            // гарантированно найдёнся одно соответствие названия типа и 
+            // самого типа
+
+            foreach (var vehicle in _vehicleTypesAndStrings)
             {
-                case nameof(Car):
+                if (type == vehicle.Value)
                 {
-                    typeClass = typeof(Car);
-                    break;
-                }
-                case nameof(HybridCar):
-                {
-                    typeClass = typeof(HybridCar);
-                    break;
-                }
-                case nameof(Helicopter):
-                {
-                    typeClass = typeof(Helicopter);
-                    break;
-                }
-                default:
-                {
-                    throw new Exception("Не указан тип ТС");
+                    typeClass = vehicle.Key;
                 }
             }
+
+            #endregion
+
+            #region ВАРИАНТ 2
+
+            //switch (type)
+            //{
+            //    case nameof(Car):
+            //    {
+            //        typeClass = typeof(Car);
+            //        break;
+            //    }
+            //    case nameof(HybridCar):
+            //    {
+            //        typeClass = typeof(HybridCar);
+            //        break;
+            //    }
+            //    case nameof(Helicopter):
+            //    {
+            //        typeClass = typeof(Helicopter);
+            //        break;
+            //    }
+            //    default:
+            //    {
+            //        throw new Exception("Не указан тип ТС");
+            //    }
+            //}
+
+            #endregion
 
             //получаем конструктор
             ConstructorInfo paramCons = typeClass.GetConstructor(
