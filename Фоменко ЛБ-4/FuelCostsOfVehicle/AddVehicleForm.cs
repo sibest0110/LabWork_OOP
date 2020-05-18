@@ -131,6 +131,11 @@ namespace FuelCostsOfVehicle
                 }
             }
 
+            if (typeClass == null)
+            {
+                throw new Exception("Не найден тип ТС (см метод CreateVehicleByString)");
+            }
+
             #endregion
 
             #region ВАРИАНТ 2
