@@ -16,12 +16,17 @@ namespace FuelCostsOfVehicle
     public static class ExternalInteraction
     {
         /// <summary>
-        /// Получение текста из файла
+        /// Получение текста из файла. Если отсутствует файл по указанному пути - FileNotFoundException
         /// </summary>
         /// <param name="path">Путь к файлу</param>
         /// <returns></returns>
         public static string ReadTXT(string path)
         {
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Не найден файл {path}");
+            }
+
             return File.ReadAllText(path);
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -123,10 +124,29 @@ namespace FuelCostsOfVehicle
 
         private void ToolStripButtonHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
-                "Помощь",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Question);
+            try
+            {
+                MessageBox.Show(ExternalInteraction.ReadTXT("readme\\help.txt"),
+                    "Помощь",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Question);
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Помощь",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Непредвиденная ошибка!",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void ToolStripButtonAddVehicle_Click(object sender, EventArgs e)
