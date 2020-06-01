@@ -245,10 +245,18 @@ namespace FuelCostsOfVehicle
                 RefreshDataGrid(_totalVehicleList);
             }
             //TODO: (v) wat? (был пустой catch)
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
                 MessageBox.Show(
                     ex.Message,
+                    "Импорт БД",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Невозможно загрузить файл",
                     "Импорт БД",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);

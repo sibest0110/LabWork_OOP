@@ -90,7 +90,7 @@ namespace FuelCostsOfVehicle
                     return newTotalList;
                 }
             }
-            throw new Exception("Импорт БД прерван");
+            throw new ArgumentNullException("Импорт БД прерван");
         }
     }
 }
