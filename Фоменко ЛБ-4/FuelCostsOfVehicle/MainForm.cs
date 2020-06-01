@@ -148,41 +148,51 @@ namespace FuelCostsOfVehicle
         {
             int counter = 0;
             var listToRemove = new List<VehiclesBase> { };
-            try
-            {
-                foreach (DataGridViewRow delRow
-                    in dataGridViewMain.SelectedRows)
-                {
-                    counter++;
-                    dataGridViewMain.Rows.Remove(delRow);
 
-                    foreach (VehiclesBase vehicle in _totalVehicleList)
+            // Если выделено всё (в том числе и последняя пустая строка)
+            if (dataGridViewMain.SelectedRows.Count > _totalVehicleList.Count)
+            {
+                counter = _totalVehicleList.Count;
+                dataGridViewMain.Rows.Clear();
+                _totalVehicleList.Clear();
+            }
+
+            foreach (DataGridViewRow delRow
+                in dataGridViewMain.SelectedRows)
+            {
+                counter++;
+
+                dataGridViewMain.Rows.Remove(delRow);
+
+                foreach (VehiclesBase vehicle in _totalVehicleList)
+                {
+                    if (Convert.ToString(
+                        vehicle.Type) == Convert.ToString(
+                                        delRow.Cells[0].Value) &&
+                        Convert.ToString(
+                            vehicle.Name) == Convert.ToString(
+                                        delRow.Cells[1].Value) &&
+                        Convert.ToString(
+                            vehicle.Weight) == Convert.ToString(
+                                        delRow.Cells[2].Value))
                     {
-                        if (Convert.ToString(
-                            vehicle.Type) == Convert.ToString(
-                                            delRow.Cells[0].Value) &&
-                            Convert.ToString(
-                                vehicle.Name) == Convert.ToString(
-                                            delRow.Cells[1].Value) &&
-                            Convert.ToString(
-                                vehicle.Weight) == Convert.ToString(
-                                            delRow.Cells[2].Value))
-                        {
-                            listToRemove.Add(vehicle);
-                        }
+                        listToRemove.Add(vehicle);
                     }
                 }
-                foreach (var remVehicle in listToRemove)
-                {
-                    _totalVehicleList.Remove(remVehicle);
-                }
+            }
+            foreach (var remVehicle in listToRemove)
+            {
+                _totalVehicleList.Remove(remVehicle);
+            }
 
+            // Чтобы не бесило сообщение про 0 удалённых строк при пустом датагриде
+            if (counter != 0)
+            {
                 MessageBox.Show($"Удалено строк: {counter}",
                     "Удаление строк",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            catch { }
         }
 
         private void ToolStripButtonUpdate_Click(object sender, EventArgs e)
