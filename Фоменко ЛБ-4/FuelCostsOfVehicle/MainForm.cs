@@ -154,9 +154,9 @@ namespace FuelCostsOfVehicle
             var addVehicleForm =
                 new AddVehicleForm(_totalVehicleList);
 
-            addVehicleForm.Show();
-
             addVehicleForm.FormClosed += AddVehicleForm_FormClosed;
+
+            addVehicleForm.ShowDialog();
         }
 
         private void AddVehicleForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -225,8 +225,8 @@ namespace FuelCostsOfVehicle
             FindForm findForm =
                 new FindForm(_totalVehicleList, _searchVehicleList);
 
-            findForm.Show();
             findForm.FormClosed += FindForm_FormClosed;
+            findForm.ShowDialog();
         }
 
         private void FindForm_FormClosed(object sender, FormClosedEventArgs e)

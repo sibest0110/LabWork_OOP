@@ -41,9 +41,10 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(177, 65);
+            this.buttonOK.Location = new System.Drawing.Point(236, 80);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(59, 23);
+            this.buttonOK.Size = new System.Drawing.Size(79, 28);
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(177, 95);
+            this.buttonCancel.Location = new System.Drawing.Point(236, 117);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(59, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(79, 28);
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -62,58 +64,64 @@
             // labelWeightVehicle
             // 
             this.labelWeightVehicle.AutoSize = true;
-            this.labelWeightVehicle.Location = new System.Drawing.Point(136, 22);
+            this.labelWeightVehicle.Location = new System.Drawing.Point(181, 27);
+            this.labelWeightVehicle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelWeightVehicle.Name = "labelWeightVehicle";
-            this.labelWeightVehicle.Size = new System.Drawing.Size(74, 13);
+            this.labelWeightVehicle.Size = new System.Drawing.Size(91, 17);
             this.labelWeightVehicle.TabIndex = 11;
             this.labelWeightVehicle.Text = "Масса ТС, кг";
             // 
             // labelNameVehicle
             // 
             this.labelNameVehicle.AutoSize = true;
-            this.labelNameVehicle.Location = new System.Drawing.Point(24, 75);
+            this.labelNameVehicle.Location = new System.Drawing.Point(32, 92);
+            this.labelNameVehicle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNameVehicle.Name = "labelNameVehicle";
-            this.labelNameVehicle.Size = new System.Drawing.Size(77, 13);
+            this.labelNameVehicle.Size = new System.Drawing.Size(98, 17);
             this.labelNameVehicle.TabIndex = 12;
             this.labelNameVehicle.Text = "Название ТС:";
             // 
             // labelTypeVehicle
             // 
             this.labelTypeVehicle.AutoSize = true;
-            this.labelTypeVehicle.Location = new System.Drawing.Point(27, 19);
+            this.labelTypeVehicle.Location = new System.Drawing.Point(36, 23);
+            this.labelTypeVehicle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTypeVehicle.Name = "labelTypeVehicle";
-            this.labelTypeVehicle.Size = new System.Drawing.Size(46, 13);
+            this.labelTypeVehicle.Size = new System.Drawing.Size(59, 17);
             this.labelTypeVehicle.TabIndex = 13;
             this.labelTypeVehicle.Text = "Тип ТС:";
             // 
             // textBoxWeightVehicle
             // 
-            this.textBoxWeightVehicle.Location = new System.Drawing.Point(136, 38);
+            this.textBoxWeightVehicle.Location = new System.Drawing.Point(181, 47);
+            this.textBoxWeightVehicle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxWeightVehicle.Name = "textBoxWeightVehicle";
-            this.textBoxWeightVehicle.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWeightVehicle.Size = new System.Drawing.Size(132, 22);
             this.textBoxWeightVehicle.TabIndex = 2;
             // 
             // textBoxNameVehicle
             // 
-            this.textBoxNameVehicle.Location = new System.Drawing.Point(27, 95);
+            this.textBoxNameVehicle.Location = new System.Drawing.Point(36, 117);
+            this.textBoxNameVehicle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNameVehicle.Name = "textBoxNameVehicle";
-            this.textBoxNameVehicle.Size = new System.Drawing.Size(131, 20);
+            this.textBoxNameVehicle.Size = new System.Drawing.Size(173, 22);
             this.textBoxNameVehicle.TabIndex = 3;
             // 
             // comboBoxTypesOfVehicles
             // 
             this.comboBoxTypesOfVehicles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTypesOfVehicles.FormattingEnabled = true;
-            this.comboBoxTypesOfVehicles.Location = new System.Drawing.Point(27, 38);
+            this.comboBoxTypesOfVehicles.Location = new System.Drawing.Point(36, 47);
+            this.comboBoxTypesOfVehicles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxTypesOfVehicles.Name = "comboBoxTypesOfVehicles";
-            this.comboBoxTypesOfVehicles.Size = new System.Drawing.Size(91, 21);
+            this.comboBoxTypesOfVehicles.Size = new System.Drawing.Size(120, 24);
             this.comboBoxTypesOfVehicles.TabIndex = 1;
             // 
             // AddVehicleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 135);
+            this.ClientSize = new System.Drawing.Size(349, 166);
             this.Controls.Add(this.labelWeightVehicle);
             this.Controls.Add(this.labelNameVehicle);
             this.Controls.Add(this.labelTypeVehicle);
@@ -125,6 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(750, 200);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "AddVehicleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
