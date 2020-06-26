@@ -46,7 +46,7 @@
             this.buttonCalculate.TabIndex = 3;
             this.buttonCalculate.Text = "Расчёт";
             this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
+            this.buttonCalculate.Click += new System.EventHandler(this.ButtonCalculate_Click);
             // 
             // buttonExit
             // 
@@ -56,7 +56,7 @@
             this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "Выход";
             this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // textBoxDistance
             // 

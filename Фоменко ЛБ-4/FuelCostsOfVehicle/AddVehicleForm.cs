@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vehicles;
+using System.Reflection;
 
 namespace FuelCostsOfVehicle
 {
@@ -22,47 +23,59 @@ namespace FuelCostsOfVehicle
         private List<VehiclesBase> _totalVehicleList;
 
         /// <summary>
-        /// Главная форма
+        /// Тип ТС и название типа
         /// </summary>
-        private MainForm _mainForm;
+        private static Dictionary<Type, string> _vehicleTypesAndStrings =
+            new Dictionary<Type, string>
+            {
+                {typeof(Car), nameof(Car)},
+                {typeof(HybridCar), nameof(HybridCar)},
+                {typeof(Helicopter), nameof(Helicopter)},
+            };
 
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public AddVehicleForm()
         {
             InitializeComponent();
+
+
+
+            foreach (var type in _vehicleTypesAndStrings)
+            {
+                comboBoxTypesOfVehicles.Items.Add(type.Value);
+            }
         }
 
         /// <summary>
         /// Конструктор с сылкой на главную форму и полный список ТС
         /// </summary>
-        /// <param name="mainForm">Главная форма</param>
         /// <param name="totalVehicleList">Полный список ТС</param>
-        public AddVehicleForm(
-            MainForm mainForm, List<VehiclesBase> totalVehicleList)
+        public AddVehicleForm(List<VehiclesBase> totalVehicleList)
             : this()
         {
             _totalVehicleList = totalVehicleList;
-            _mainForm = mainForm;
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonOK_Click(object sender, EventArgs e)
+        private void ButtonOK_Click(object sender, EventArgs e)
         {
             try
             {
+                Program.CheckWeight(textBoxWeightVehicle);
+
                 _totalVehicleList.Add(
                     CreateVehicleByString(
-                        comboBoxTypesOfVehicles.Text, 
-                        textBoxNameVehicle.Text, 
+                        comboBoxTypesOfVehicles.Text,
+                        textBoxNameVehicle.Text,
                         textBoxWeightVehicle.Text));
 
-                _mainForm.dataGridViewMain.Rows.Add(
-                    comboBoxTypesOfVehicles.Text,
-                    textBoxNameVehicle.Text,
-                    textBoxWeightVehicle.Text);
+
 
                 textBoxNameVehicle.Text = "";
                 textBoxWeightVehicle.Text = "";
@@ -102,28 +115,65 @@ namespace FuelCostsOfVehicle
         /// <returns></returns>
         public static VehiclesBase CreateVehicleByString(string type, string name, string weight)
         {
-            switch (type)
+            Type typeClass = null;
+
+            #region ВАРИАНТ 1 (Мне больше нравится)
+
+            // Так как у нас список _vehicleTypesAndStrings формируется
+            // в одном месте и тут мы ссылаемся на это же место,
+            // гарантированно найдёнся одно соответствие названия типа и 
+            // самого типа
+
+            foreach (var vehicle in _vehicleTypesAndStrings)
             {
-                case "Car":
+                if (type == vehicle.Value)
                 {
-                    return new Car(name, Convert.ToDouble(
-                            weight.Replace(".", ",")));
-                }
-                case "HybridCar":
-                {
-                    return new HybridCar(name, Convert.ToDouble(
-                            weight.Replace(".", ",")));
-                }
-                case "Helicopter":
-                {
-                    return new Helicopter(name, Convert.ToDouble(
-                            weight.Replace(".", ",")));
-                }
-                default:
-                {
-                    throw new Exception("Не указан тип ТС");
+                    typeClass = vehicle.Key;
                 }
             }
+
+            if (typeClass == null)
+            {
+                throw new Exception("Не найден тип ТС (см метод CreateVehicleByString)");
+            }
+
+            #endregion
+
+            #region ВАРИАНТ 2
+
+            //switch (type)
+            //{
+            //    case nameof(Car):
+            //    {
+            //        typeClass = typeof(Car);
+            //        break;
+            //    }
+            //    case nameof(HybridCar):
+            //    {
+            //        typeClass = typeof(HybridCar);
+            //        break;
+            //    }
+            //    case nameof(Helicopter):
+            //    {
+            //        typeClass = typeof(Helicopter);
+            //        break;
+            //    }
+            //    default:
+            //    {
+            //        throw new Exception("Не указан тип ТС");
+            //    }
+            //}
+
+            #endregion
+
+            //получаем конструктор
+            ConstructorInfo paramCons = typeClass.GetConstructor(
+                new Type[] { typeof(string), typeof(double) });
+
+
+            //вызываем конструтор
+            return (VehiclesBase)paramCons.Invoke(
+                new object[] { name, Convert.ToDouble(weight) });
         }
     }
 }

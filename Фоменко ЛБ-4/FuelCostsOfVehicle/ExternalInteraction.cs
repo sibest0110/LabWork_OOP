@@ -10,15 +10,23 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace FuelCostsOfVehicle
 {
+    /// <summary>
+    /// Класс для взаимодействия со внешними файлами
+    /// </summary>
     public static class ExternalInteraction
     {
         /// <summary>
-        /// Получение текста из файла
+        /// Получение текста из файла. Если отсутствует файл по указанному пути - FileNotFoundException
         /// </summary>
         /// <param name="path">Путь к файлу</param>
         /// <returns></returns>
         public static string ReadTXT(string path)
         {
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Не найден файл {path}");
+            }
+
             return File.ReadAllText(path);
         }
 
@@ -87,7 +95,7 @@ namespace FuelCostsOfVehicle
                     return newTotalList;
                 }
             }
-            throw new Exception("Импорт БД прерван");
+            throw new ArgumentNullException("Импорт БД прерван");
         }
     }
 }
