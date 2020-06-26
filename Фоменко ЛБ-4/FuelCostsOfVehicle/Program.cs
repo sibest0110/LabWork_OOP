@@ -41,7 +41,7 @@ namespace FuelCostsOfVehicle
         /// Проверка корректности ввода массы ТС
         /// </summary>
         /// <param name="weight">Объект Control, содержащий значение Массы ТС</param>
-        public static void CheckWeight(Control weight)
+        public static void CheckWeight(TextBox weight)
         {
             try
             {
