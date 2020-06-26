@@ -22,7 +22,6 @@ namespace FuelCostsOfVehicle
         /// </summary>
         private List<VehiclesBase> _totalVehicleList;
 
-        //TODO: (V) глобальный словарь ТС
         /// <summary>
         /// Тип ТС и название типа
         /// </summary>
@@ -117,8 +116,6 @@ namespace FuelCostsOfVehicle
         public static VehiclesBase CreateVehicleByString(string type, string name, string weight)
         {
             Type typeClass = null;
-
-            //TODO: (v) Со стрингами разобрался
 
             #region ВАРИАНТ 1 (Мне больше нравится)
 

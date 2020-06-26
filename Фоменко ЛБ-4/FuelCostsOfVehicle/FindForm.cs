@@ -73,10 +73,6 @@ namespace FuelCostsOfVehicle
                 Program.CloneVehicleList(_totalVehicleList);
         }
 
-
-        //TODO: (v) Применение "_controlsDictionary"
-
-        //TODO: (v) RSDN
         private void CheckBoxType_CheckedChanged(object sender, EventArgs e)
         {
             SwitchConditionByCheckBox(sender);
@@ -105,13 +101,11 @@ namespace FuelCostsOfVehicle
                 = localCheckBox.Checked;
         }
 
-        //TODO: (v) RSDN
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //TODO: (v) RSDN
         private void ButtonFind_Click(object sender, EventArgs e)
         {
             try

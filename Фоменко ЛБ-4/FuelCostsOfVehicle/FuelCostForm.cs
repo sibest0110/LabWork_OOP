@@ -16,11 +16,10 @@ namespace FuelCostsOfVehicle
     /// </summary>
     public partial class FuelCostForm : Form
     {
-        //TODO: (v) RSDN
         /// <summary>
         /// ТС, для которого рассчитывается расход топлива
         /// </summary>
-        private IFuelCosts _vehicle;
+        private readonly IFuelCosts _vehicle;
 
         public FuelCostForm()
         {
@@ -46,7 +45,6 @@ namespace FuelCostsOfVehicle
 
         }
 
-        //TODO: (v) RSDN
         private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();

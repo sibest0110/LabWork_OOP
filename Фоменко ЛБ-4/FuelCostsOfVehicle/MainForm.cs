@@ -95,7 +95,6 @@ namespace FuelCostsOfVehicle
 
             var fuelCostForm = new FuelCostForm(FindVehicleBySelectedRow());
             fuelCostForm.ShowDialog();
-            //TODO: (v) wat? (был ненужный try catch)
         }
 
         /// <summary>
@@ -274,7 +273,6 @@ namespace FuelCostsOfVehicle
                     ExternalInteraction.DownLoadDataBase();
                 RefreshDataGrid(_totalVehicleList);
             }
-            //TODO: (v) wat? (был пустой catch)
             catch (ArgumentNullException ex)
             {
                 MessageBox.Show(
