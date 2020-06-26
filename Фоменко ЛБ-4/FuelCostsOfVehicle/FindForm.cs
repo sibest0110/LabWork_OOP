@@ -116,9 +116,6 @@ namespace FuelCostsOfVehicle
         {
             try
             {
-                Program.CheckWeight(textBoxWeight);
-
-
 
                 if (checkBoxType.Checked)
                 {
@@ -130,6 +127,8 @@ namespace FuelCostsOfVehicle
                 }
                 if (checkBoxWeight.Checked)
                 {
+                    Program.CheckWeight(textBoxWeight);
+
                     _searchVehicleListLocal = FindVehiclesByWeight(
                         Convert.ToDouble(textBoxWeight.Text.Replace(".", ",")));
                 }
