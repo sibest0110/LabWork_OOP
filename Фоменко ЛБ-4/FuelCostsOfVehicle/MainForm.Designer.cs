@@ -51,9 +51,11 @@
             // groupBoxDataBase
             // 
             this.groupBoxDataBase.Controls.Add(this.dataGridViewMain);
-            this.groupBoxDataBase.Location = new System.Drawing.Point(6, 28);
+            this.groupBoxDataBase.Location = new System.Drawing.Point(8, 34);
+            this.groupBoxDataBase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxDataBase.Name = "groupBoxDataBase";
-            this.groupBoxDataBase.Size = new System.Drawing.Size(331, 281);
+            this.groupBoxDataBase.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDataBase.Size = new System.Drawing.Size(441, 346);
             this.groupBoxDataBase.TabIndex = 0;
             this.groupBoxDataBase.TabStop = false;
             this.groupBoxDataBase.Text = "База данных ТС";
@@ -69,10 +71,12 @@
             this.NameOfVehicle,
             this.WeightOfVehicle});
             this.dataGridViewMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridViewMain.Location = new System.Drawing.Point(6, 23);
+            this.dataGridViewMain.Location = new System.Drawing.Point(8, 28);
+            this.dataGridViewMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewMain.Name = "dataGridViewMain";
             this.dataGridViewMain.ReadOnly = true;
-            this.dataGridViewMain.Size = new System.Drawing.Size(315, 252);
+            this.dataGridViewMain.RowHeadersWidth = 51;
+            this.dataGridViewMain.Size = new System.Drawing.Size(420, 310);
             this.dataGridViewMain.TabIndex = 1;
             this.dataGridViewMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMain_CellClick);
             this.dataGridViewMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMain_CellDoubleClick);
@@ -80,6 +84,7 @@
             // TypeOfVehicle
             // 
             this.TypeOfVehicle.HeaderText = "Тип";
+            this.TypeOfVehicle.MinimumWidth = 6;
             this.TypeOfVehicle.Name = "TypeOfVehicle";
             this.TypeOfVehicle.ReadOnly = true;
             this.TypeOfVehicle.Width = 60;
@@ -87,6 +92,7 @@
             // NameOfVehicle
             // 
             this.NameOfVehicle.HeaderText = "Название";
+            this.NameOfVehicle.MinimumWidth = 6;
             this.NameOfVehicle.Name = "NameOfVehicle";
             this.NameOfVehicle.ReadOnly = true;
             this.NameOfVehicle.Width = 160;
@@ -94,6 +100,7 @@
             // WeightOfVehicle
             // 
             this.WeightOfVehicle.HeaderText = "Масса, кг";
+            this.WeightOfVehicle.MinimumWidth = 6;
             this.WeightOfVehicle.Name = "WeightOfVehicle";
             this.WeightOfVehicle.ReadOnly = true;
             this.WeightOfVehicle.Width = 50;
@@ -101,6 +108,7 @@
             // toolStrip1
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonHelp,
             this.toolStripButtonAddVehicle,
@@ -112,7 +120,7 @@
             this.toolStripButtonRandom});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(341, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(455, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -122,7 +130,7 @@
             this.toolStripButtonHelp.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHelp.Image")));
             this.toolStripButtonHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonHelp.Name = "toolStripButtonHelp";
-            this.toolStripButtonHelp.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonHelp.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonHelp.Text = "Справка";
             this.toolStripButtonHelp.Click += new System.EventHandler(this.ToolStripButtonHelp_Click);
             // 
@@ -132,7 +140,7 @@
             this.toolStripButtonAddVehicle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddVehicle.Image")));
             this.toolStripButtonAddVehicle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAddVehicle.Name = "toolStripButtonAddVehicle";
-            this.toolStripButtonAddVehicle.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAddVehicle.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonAddVehicle.Text = "Добавить ТС";
             this.toolStripButtonAddVehicle.Click += new System.EventHandler(this.ToolStripButtonAddVehicle_Click);
             // 
@@ -142,7 +150,7 @@
             this.toolStripButtonRemoveVehicle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRemoveVehicle.Image")));
             this.toolStripButtonRemoveVehicle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRemoveVehicle.Name = "toolStripButtonRemoveVehicle";
-            this.toolStripButtonRemoveVehicle.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonRemoveVehicle.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonRemoveVehicle.Text = "Удалить выделенное ТС";
             this.toolStripButtonRemoveVehicle.Click += new System.EventHandler(this.ToolStripButtonRemoveVehicle_Click);
             // 
@@ -152,7 +160,7 @@
             this.toolStripButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUpdate.Image")));
             this.toolStripButtonUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonUpdate.Name = "toolStripButtonUpdate";
-            this.toolStripButtonUpdate.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUpdate.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonUpdate.Text = "Обновить список";
             this.toolStripButtonUpdate.Click += new System.EventHandler(this.ToolStripButtonUpdate_Click);
             // 
@@ -162,7 +170,7 @@
             this.toolStripButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSearch.Image")));
             this.toolStripButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSearch.Name = "toolStripButtonSearch";
-            this.toolStripButtonSearch.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSearch.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonSearch.Text = "Поиск ТС";
             this.toolStripButtonSearch.Click += new System.EventHandler(this.ToolStripButtonSearch_Click);
             // 
@@ -172,7 +180,7 @@
             this.toolStripButtonExport.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonExport.Image")));
             this.toolStripButtonExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonExport.Name = "toolStripButtonExport";
-            this.toolStripButtonExport.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonExport.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonExport.Text = "Выгрузка базы данных во внешний файл";
             this.toolStripButtonExport.Click += new System.EventHandler(this.ToolStripButtonExport_Click);
             // 
@@ -182,7 +190,7 @@
             this.toolStripButtonImport.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonImport.Image")));
             this.toolStripButtonImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonImport.Name = "toolStripButtonImport";
-            this.toolStripButtonImport.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonImport.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonImport.Text = "Загрузка базы данных из внешнего файла";
             this.toolStripButtonImport.Click += new System.EventHandler(this.ToolStripButtonImport_Click);
             // 
@@ -192,20 +200,21 @@
             this.toolStripButtonRandom.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRandom.Image")));
             this.toolStripButtonRandom.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRandom.Name = "toolStripButtonRandom";
-            this.toolStripButtonRandom.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonRandom.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonRandom.Text = "Генерация случайного ТС";
             this.toolStripButtonRandom.Click += new System.EventHandler(this.ToolStripButtonRandom_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 311);
+            this.ClientSize = new System.Drawing.Size(455, 383);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBoxDataBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(400, 200);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

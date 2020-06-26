@@ -94,7 +94,7 @@ namespace FuelCostsOfVehicle
             }
 
             var fuelCostForm = new FuelCostForm(FindVehicleBySelectedRow());
-            fuelCostForm.Show();
+            fuelCostForm.ShowDialog();
             //TODO: (v) wat? (был ненужный try catch)
         }
 
@@ -341,7 +341,5 @@ namespace FuelCostsOfVehicle
                 MessageBox.Show("Не получилось получить случайное ТС");
             }
         }
-
-
     }
 }
