@@ -68,11 +68,15 @@ namespace FuelCostsOfVehicle
         {
             try
             {
+                Program.CheckWeight(sender as Control);
+
                 _totalVehicleList.Add(
                     CreateVehicleByString(
                         comboBoxTypesOfVehicles.Text,
                         textBoxNameVehicle.Text,
                         textBoxWeightVehicle.Text));
+
+
 
                 textBoxNameVehicle.Text = "";
                 textBoxWeightVehicle.Text = "";

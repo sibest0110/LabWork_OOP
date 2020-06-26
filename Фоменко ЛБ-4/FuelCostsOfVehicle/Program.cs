@@ -36,5 +36,21 @@ namespace FuelCostsOfVehicle
 
             return clone;
         }
+
+        /// <summary>
+        /// Проверка корректности ввода массы ТС
+        /// </summary>
+        /// <param name="weight">Объект Control, содержащий значение Массы ТС</param>
+        public static void CheckWeight(Control weight)
+        {
+            try
+            {
+                Convert.ToDouble(weight.Text);
+            }
+            catch
+            {
+                throw new Exception("Неверно указана масса ТС. Необходимо ввести число");
+            }
+        }
     }
 }

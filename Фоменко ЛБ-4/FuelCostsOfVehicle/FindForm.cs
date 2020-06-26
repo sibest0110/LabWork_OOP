@@ -47,7 +47,7 @@ namespace FuelCostsOfVehicle
             InitializeComponent();
 
 
-            _controlsDictionary = new Dictionary<CheckBox, Control> 
+            _controlsDictionary = new Dictionary<CheckBox, Control>
             {
                 { checkBoxType, comboBoxType },
                 { checkBoxName, textBoxName },
@@ -114,30 +114,45 @@ namespace FuelCostsOfVehicle
         //TODO: (v) RSDN
         private void ButtonFind_Click(object sender, EventArgs e)
         {
-            if (checkBoxType.Checked)
+            try
             {
-                _searchVehicleListLocal = FindVehiclesByType(comboBoxType.Text);
+                Program.CheckWeight(textBoxWeight);
+
+
+
+                if (checkBoxType.Checked)
+                {
+                    _searchVehicleListLocal = FindVehiclesByType(comboBoxType.Text);
+                }
+                if (checkBoxName.Checked)
+                {
+                    _searchVehicleListLocal = FindVehiclesByName(textBoxName.Text);
+                }
+                if (checkBoxWeight.Checked)
+                {
+                    _searchVehicleListLocal = FindVehiclesByWeight(
+                        Convert.ToDouble(textBoxWeight.Text.Replace(".", ",")));
+                }
+
+
+                _searchVehicleListLocal.ForEach(_searchVehicleListGlobal.Add);
+
+
+                MessageBox.Show(
+                    $"Найдено транспортных средств: {_searchVehicleListGlobal.Count}",
+                    "Результат поиска",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                this.Close();
             }
-            if (checkBoxName.Checked)
+            catch (Exception ex)
             {
-                _searchVehicleListLocal = FindVehiclesByName(textBoxName.Text);
+                MessageBox.Show(
+                            $"{ex.Message}",
+                            "Внимание",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
             }
-            if (checkBoxWeight.Checked)
-            {
-                _searchVehicleListLocal = FindVehiclesByWeight(
-                    Convert.ToDouble(textBoxWeight.Text.Replace(".", ",")));
-            }
-
-
-            _searchVehicleListLocal.ForEach(_searchVehicleListGlobal.Add);
-
-
-            MessageBox.Show(
-                $"Найдено транспортных средств: {_searchVehicleListGlobal.Count}",
-                "Результат поиска",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            this.Close();
         }
 
         /// <summary>
